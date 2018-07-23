@@ -13,7 +13,7 @@ const client = new Discord.Client();
 const dbl = new DBL(DBLAPI, client);
 
 const YTAPI = process.env.GAK;
-const youtube = new YouTube(AIzaSyCdv0yGMUc5SAA5KLcEinDLELQii5WsnHA);
+const youtube = new YouTube("AIzaSyCdv0yGMUc5SAA5KLcEinDLELQii5WsnHA");
 
 const queue = new Map();
 
