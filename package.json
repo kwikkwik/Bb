@@ -1,0 +1,44 @@
+{
+  "name": "dwiimusic",
+  "version": "0.2.1",
+  "description": "A simple discord bot",
+  "main": "MusicBot.js",
+  "scripts": {
+    "test": "node MusicBot.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordbot"
+  ],
+  "author": "ItzMeDwii",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "opusscript": "0.0.6",
+    "simple-youtube-api": "^5.0.2",
+    "ytdl-core": "^0.20.3",
+    "fs": "0.0.1-security",
+    "moment":"2.22.1",
+    "moment-duration-format": "2.2.2",
+    "os": "0.1.1",
+    "dblapi.js": "2.0.1",
+    "string-similarity": "1.2.0",
+    "weather-js": "^2.0.0",
+    "quick.db": "^6.2.1",
+    "memejs": "1.0.7",
+    "cleverbot.io": "1.0.4",
+    "nekos.life": "1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-aqua": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "aqua",
+    "rules": {
+      "no-console": 0
+    }
+  }
+}
