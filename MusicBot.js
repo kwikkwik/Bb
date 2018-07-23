@@ -295,10 +295,7 @@ if (command === 'ping') {
     
 }
 	if (command === 'play') {
-		if (!args[1]) return msg.channel.send({embed: {
-          color: randomhexcolor,
-          description: `❌ Correct Usage Is: **my!play or my!p [Song Name]/[Video URL]/[Playlist URL]**`
-        }});
+		if (!args[1]) return msg.reply(`Usage: **${prefix}play** <Song | URL | Playlist URL>.`);
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
