@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
  
   const embed = new Discord.RichEmbed() // Define a new embed, if you are on the `stable` branch it will be new Discord.RichEmbed()
     .setColor(0xff2f2f) // You can set your color here
-    .setTitle("Plastik Command List")
+    .setTitle("Bolt Command List")
     .setFooter(`Page ${page} of ${pages.length} • Plastik | Beta Help`) // This is the default value, showing the default page and the amount of pages in the array.
     .setDescription(pages[page-1]) // This sets the description as the default page (we are subtracting 1 since arrays start at 0)
  
@@ -38,7 +38,7 @@ exports.run = (client, message, args) => {
       forwards.on('collect', r => { // This runs when the forwards reaction is found
         if (page === pages.length) return; // We can use copy and paste since it is basically the same thing, although now it checks if the page is currently on the highest possible, so it can't go any higher.
         page++; // If it can go forwards, push forwards the page number
-	embed.setTitle("Plastik Command List")
+	embed.setTitle("Bolt Command List")
         embed.setDescription(pages[page-1]); // Just like setting the first one, reset the Description to the new page
         embed.setFooter(`Page ${page} of ${pages.length} • Plastik | Beta Help`); // This also sets the footer to view the current pagenumber
         msg.edit(embed) // Then, we can push the edit to the message
