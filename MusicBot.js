@@ -96,7 +96,7 @@ client.on('message', async msg => { // eslint-disable-line
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
-		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](bot.discord.io/bolt)")
+		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](https://bot.discord.io/bolt)")
 		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
@@ -181,7 +181,8 @@ if (command === 'ping') {
 	if (command === 'invite') {
 		let inviteembed = new Discord.RichEmbed()
 		
-		.addField("Invite Bolt", "[The Link](https://discordapp.com/oauth2/authorize?client_id=463017235221446656&scope=bot&permissions=2146958591)")
+		.addField("Invite Bolt", "[The Link](https://bot.discord.io/bolt)", true)
+		.setThumbnail("https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048")
                 .setFooter("© MasterBotTeam")
 		
 		return msg.channel.send(inviteembed)
