@@ -7,6 +7,6 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
   .setTitle(data.title[0])
   .setColor("RANDOM")
   .setImage(data.url[0])
-  .setFooter(`Meme by ${data.author[0]} | Plastik`)
+  .setFooter(`Meme by ${data.author[0]} | Bolt`)
   message.channel.send({embed});
   })};
