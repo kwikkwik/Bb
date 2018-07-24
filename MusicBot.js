@@ -80,7 +80,7 @@ client.on('message', async msg => { // eslint-disable-line
 	        let embed = new Discord.RichEmbed()
 		.setTitle("Plastik Changelog | 27 May 2018")
 		.setDescription("**[+] Added | [-] Removed | [*] Changed/Fixed** \n\n**[+]** Commands: `sayd` \n**[*]** Commands: `say` `sayembed`")
-		.setFooter("Plastik | Beta")
+		.setFooter("© MasterBotTeam")
 		.setColor('GREEN')
 		.setTimestamp()
 		
@@ -96,8 +96,8 @@ client.on('message', async msg => { // eslint-disable-line
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
-		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=463017235221446656&scope=bot&permissions=2146958591)")
-		.setFooter(`Requested by: ${msg.author.tag} | Plastik`)
+		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591)")
+		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
 
@@ -128,7 +128,7 @@ client.on('message', async msg => { // eslint-disable-line
         .addField(":wind_blowing_face: Feels Like :wind_blowing_face:", `**__${result[0].current.feelslike}__ Degrees Celsius**`, true)
         .addField(":sweat: Humidity :sweat:", `**__${result[0].current.humidity}%__**`, true)
         .addField(":wind_blowing_face: Wind Speed :wind_blowing_face:", `**__${result[0].current.windspeed.replace("mph", "Miles Per Hour")}__**`, true)
-        .setFooter("Plastik Bot")
+        .setFooter("© MasterBotTeam")
         msg.channel.send({ embed: embed })
 })};
 	if (command === '8ball') {
@@ -181,8 +181,8 @@ if (command === 'ping') {
 	if (command === 'invite') {
 		let inviteembed = new Discord.RichEmbed()
 		
-		.addField("Invite Plastik", "[The Link](https://discordapp.com/oauth2/authorize?client_id=463017235221446656&scope=bot&permissions=2146958591)")
-                .setFooter("Plastik Bot")
+		.addField("Invite Bolt", "[The Link](https://discordapp.com/oauth2/authorize?client_id=463017235221446656&scope=bot&permissions=2146958591)")
+                .setFooter("© MasterBotTeam")
 		
 		return msg.channel.send(inviteembed)
 	};
@@ -211,8 +211,8 @@ if (command === 'ping') {
 
         const statembed = new Discord.RichEmbed()
         .setColor(0xff2f2f)
-        .setDescription("📊 Plastik Bot Stats")
-        .setFooter(`Plastik | ${shardall} Shard`)
+        .setDescription("📊 Bolt Stats")
+        .setFooter(`Bolt | ${shardall} Shard`)
         .setTimestamp()
         
         .addField("Bot Uptime:", `• ${duration}`, true)
@@ -221,7 +221,7 @@ if (command === 'ping') {
         .addField("Bot Informations:", `• Bot Developer: ${owner} \n• Bot Version: ${packages.version}`, true)
         .addField("CPU Usage:", `• ${Math.round(ccpu * 100) / 100}%`, true)
 	
-	.addField("Usefull Links", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=463017235221446656&scope=bot&permissions=2146958591)")
+	.addField("Usefull Links", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591)")
 
         msg.channel.send(statembed);	
 	};
