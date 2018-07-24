@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("RANDOM") 
     .setDescription(`${katakata}`)
     .setImage(pat.url)
-    .setFooter(`Requested by: ${message.author.tag} | Plastik`);
+    .setFooter(`Requested by: ${message.author.tag} | Bolt`);
   setTimeout(() => {
         postMsg.edit(embed)
         }, 2000);
