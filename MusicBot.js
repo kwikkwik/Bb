@@ -19,7 +19,7 @@ const queue = new Map();
 
 client.on("ready", () => {
     function randomStatus() {
-        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "my!help | Beta", "Music with my users."]
+        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | ${client.ping}ms"]
           let rstatus = Math.floor(Math.random() * status.length);
         client.user.setActivity(status[rstatus], {type: 'LISTENING'});
 	}; setInterval(randomStatus, 30000)
