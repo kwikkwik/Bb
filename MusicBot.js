@@ -19,7 +19,7 @@ const queue = new Map();
 
 client.on("ready", () => {
     function randomStatus() {
-        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | Bolt"]
+        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | Bolt", "bot.discord.io/bolt"]
           let rstatus = Math.floor(Math.random() * status.length);
         client.user.setActivity(status[rstatus], {type: 'LISTENING'});
 	}; setInterval(randomStatus, 30000)
@@ -88,15 +88,15 @@ client.on('message', async msg => { // eslint-disable-line
 		};
        if (command === 'help') {
                 let helpembed = new Discord.RichEmbed()
-		.setThumbnail('https://cdn.discordapp.com/avatars/463017235221446656/6a69fa165bf2031c85aa5c733842d2ec.png?size=2048')
-                .setTitle("Hi, im Plastik :-)")
+		.setThumbnail('https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048')
+                .setTitle("Hi, im Bolt :-)")
 		.setDescription("Below you can see all command that I can run.")
                 .addField("Core", "`help`, `helpbeta`, `ping`, `invite`, `stats`, `info`, `setprefix`")
 		.addField("Music", "`play`, `skip`, `stop`, `queue`, `pause`, `resume`, `volume`, `np`") 
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
-		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591)")
+		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](bot.discord.io/bolt)")
 		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
