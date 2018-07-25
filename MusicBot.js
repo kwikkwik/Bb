@@ -19,7 +19,7 @@ const queue = new Map();
 
 client.on("ready", () => {
     function randomStatus() {
-        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | Bolt", "bot.discord.io/bolt"]
+        let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | Bolt", "bot.discord.io/bolt", "24/7 | Vote"]
           let rstatus = Math.floor(Math.random() * status.length);
         client.user.setActivity(status[rstatus], {type: 'LISTENING'});
 	}; setInterval(randomStatus, 30000)
@@ -65,7 +65,7 @@ client.on('message', async msg => { // eslint-disable-line
     // TAG ME IF YOU DON'T KNOW DA' PREFIX
     const ClientMention = new RegExp(`^<@!?${client.user.id}> help`);
     if (msg.content.match(ClientMention)) {
-        return msg.reply(`My prefix is **my!** \nJust type **my!help** for all command list that i can run for you :)`);
+        return msg.reply(`My prefix is **b!** \nJust type **b!help** for all command list that i can run for you :)`);
     };
 	
 // Commands
@@ -78,7 +78,7 @@ client.on('message', async msg => { // eslint-disable-line
     }
        if (command === 'changelog') {
 	        let embed = new Discord.RichEmbed()
-		.setTitle("Plastik Changelog | 27 May 2018")
+		.setTitle("Bolt Changelog | 27 May 2018")
 		.setDescription("**[+] Added | [-] Removed | [*] Changed/Fixed** \n\n**[+]** Commands: `sayd` \n**[*]** Commands: `say` `sayembed`")
 		.setFooter("© MasterBotTeam")
 		.setColor('GREEN')
@@ -89,14 +89,13 @@ client.on('message', async msg => { // eslint-disable-line
        if (command === 'help') {
                 let helpembed = new Discord.RichEmbed()
 		.setThumbnail('https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048')
-                .setTitle("Hi, im Bolt :-)")
-		.setDescription("Below you can see all command that I can run.")
-                .addField("Core", "`help`, `helpbeta`, `ping`, `invite`, `stats`, `info`, `setprefix`")
+                .setTitle("Bolt Command List")
+                .addField("Core", "`help`, `ping`, `invite`, `stats`, `info`, `setprefix`")
 		.addField("Music", "`play`, `skip`, `stop`, `queue`, `pause`, `resume`, `volume`, `np`") 
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
-		.addField("**Usefull Links**", "[Vote Me](-) | [Invite Me](https://bot.discord.io/bolt)")
+		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt)")
 		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
@@ -120,7 +119,7 @@ client.on('message', async msg => { // eslint-disable-line
         else if (result[0].current.skytext === "Partly Cloudy") url = "";
         var embed = new Discord.RichEmbed()
         .setTitle(`Forecast for ${result[0].location.name}`)
-        .setColor("BLUE")
+        .setColor("GREEN")
         .setThumbnail(result[0].current.imageUrl)
         .setTimestamp()
         .addField(":thermometer: Temperature :thermometer:", `**__${result[0].current.temperature}__ Degrees Celsius**`, true)
@@ -135,7 +134,7 @@ client.on('message', async msg => { // eslint-disable-line
 		var tanyas = [':8ball: Absolutely.', ':8ball: Absolutely not.', ':8ball: It is true.', ':8ball: Impossible.', ':8ball: Of course.', ':8ball: I do not think so.', ':8ball: It is true.', ':8ball: It is not true.', ':8ball: I am very undoubtful of that.',':8ball: I am very doubtful of that.', ':8ball: Sources point to no.', ':8ball: Theories prove it.', ':8ball: Reply hazy try again', ':8ball: Ask again later', ':8ball: Better not tell you now', ':8ball: Cannot predict now', ':8ball: Concentrate and ask again'];
         const embed = new Discord.RichEmbed()
         .setDescription(tanyas[Math.floor(Math.random() * tanyas.length)])
-        .setColor(0xff2f2f)
+        .setColor("GREEN")
 
         msg.channel.send({embed});
 }
@@ -163,7 +162,7 @@ if (command === 'sayembed') {
 let embed = new Discord.RichEmbed()
   
             .setDescription(`${embedarg}`)
-            .setColor('RANDOM')
+            .setColor("GREEN")
 
             msg.channel.send({embed})
   
@@ -173,6 +172,7 @@ if (command === 'ping') {
         let diff = (Date.now() - start); 
         let API = (client.ping).toFixed(2)
         let embed = new Discord.RichEmbed()
+	.setColor("GREEN")
         .setTitle("🏓 Pong!")
         .addField("Latency", `${diff}ms`, true)
         .addField("API", `${API}ms`, true)
@@ -181,6 +181,7 @@ if (command === 'ping') {
 	if (command === 'invite') {
 		let inviteembed = new Discord.RichEmbed()
 		
+		.setColor("GREEN")
 		.addField("Invite Bolt", "[The Link](https://bot.discord.io/bolt)", true)
 		.setThumbnail("https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048")
                 .setFooter("© MasterBotTeam")
@@ -222,7 +223,7 @@ if (command === 'ping') {
         .addField("Bot Informations:", `• Bot Developer: ${owner} \n• Bot Version: ${packages.version}`, true)
         .addField("CPU Usage:", `• ${Math.round(ccpu * 100) / 100}%`, true)
 	
-	.addField("Usefull Links", "[Vote Me](-) | [Invite Me](https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591)")
+	.addField("Usefull Links", "[Invite Me](https://bot.discord.io/Bolt)")
 
         msg.channel.send(statembed);	
 	};
@@ -236,7 +237,7 @@ if (command === 'ping') {
             code = require('util').inspect(code, { depth: 0 });
         let embed = new Discord.RichEmbed()
         .setAuthor('Evaluate')
-        .setColor('RANDOM')
+        .setColor('GREEN')
         .addField(':inbox_tray: Input', `\`\`\`js\n${codein}\`\`\``)
         .addField(':outbox_tray: Output', `\`\`\`js\n${code}\n\`\`\``)
         msg.channel.send(embed)
@@ -250,7 +251,7 @@ if (command === 'ping') {
     
     user = user ? user : author;
     let uEmbed = new Discord.RichEmbed()
-    .setColor("YELLOW")
+    .setColor("GREEN")
     .setImage(user.displayAvatarURL)
     .setDescription(`[${msg.author} Avatar](${user.displayAvatarURL})`);
 
@@ -261,7 +262,7 @@ if (command === 'ping') {
     let sicon       = msg.guild.iconURL;
     let serverEmbed = new Discord.RichEmbed()
         .setDescription("**Server Information**")
-        .setColor("YELLOW")
+        .setColor("GREEN")
         .setThumbnail(sicon)
         .addField("Server Name", msg.guild.name)
         .addField("Created At", msg.guild.createdAt)
@@ -325,7 +326,7 @@ if (command === 'ping') {
                                         let selectembed = new Discord.RichEmbed()
 					
 					.setTitle("Song Selection")
-					.setColor("YELLOW")
+					.setColor("GREEN")
 					.setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
 					.setFooter("Please provide a value to select one of the search results ranging from 1-10.")
 					
@@ -372,7 +373,7 @@ if (command === 'ping') {
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let nowembed = new Discord.RichEmbed()
 		
-		.setColor("YELLOW")
+		.setColor("GREEN")
 		.setDescription(`🎶 Now playing: **${serverQueue.songs[0].title}**`)
 		
 		return msg.channel.send(nowembed);
@@ -381,7 +382,7 @@ if (command === 'ping') {
 		let queueembed = new Discord.RichEmbed()
 		
 		.setTitle("Song Queue")
-		.setColor("YELLOW")
+		.setColor("GREEN")
 		.setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}`)
 		.addField("Now Playing", `${serverQueue.songs[0].title}`)
 		
@@ -444,7 +445,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		if (playlist) return undefined;
 		let qaddembed = new Discord.RichEmbed()
 		
-  .setColor("YELLOW")
+  .setColor("GREEN")
   .setAuthor(`Added to Queue`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, true)
@@ -480,7 +481,7 @@ function play(guild, song) {
 	
 	let splayembed = new Discord.RichEmbed()
 	
-  .setColor("YELLOW")
+  .setColor("GREEN")
   .setAuthor(`Start Playing`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, true)
@@ -517,7 +518,7 @@ client.on('message', message => {
     } catch(e) {
         console.log(e.message);
     } finally {
-        console.log(`${message.author.username} ran the command: ${cmd}`);
+        console.log(`${message.author.username} Telah Menggunakan Command: ${cmd}`);
     }
 });
 
