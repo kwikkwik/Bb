@@ -1,5 +1,5 @@
 {
-  "name": "dwiimusic",
+  "name": "Bolt",
   "version": "0.2.1",
   "description": "A simple discord bot",
   "main": "MusicBot.js",
@@ -11,7 +11,7 @@
     "bot",
     "discordbot"
   ],
-  "author": "ItzMeDwii",
+  "author": "_Brickmaster_#0218",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.3.2",
