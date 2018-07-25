@@ -25,10 +25,10 @@ exports.run = async (client, message, args, tools, map) => {
 if (message.channel.type === 'dm') return;
     const embed = new Discord.RichEmbed()
     .setColor("GREEN")
-    .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
+    .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
     .setTitle("Invite me!") // TITLE
-    .setURL('https://discordapp.com/oauth2/authorize?client_id=464511870993432578&scope=bot&permissions=2146958591') // THIS WILL SET THE TITLE URL TO "www.google.com" 
-    .setThumbnail('https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048')
+    .setURL('https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591') // THIS WILL SET THE TITLE URL TO "www.google.com" 
+    .setThumbnail('https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048')
     .setDescription("Bot Info!")
     .addField("Name", `__**${client.user.username}**__`, true)
     .addField("Developer", "`_Brickmaster_#0218`", true)
@@ -42,7 +42,7 @@ if (message.channel.type === 'dm') return;
     .addField("Ram Usage", `${Math.round(used * 100) / 100}MB`, true)
     .addField("Uptime: ", `Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}`, true)
     .addField("Created Date", `${moment.utc(client.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-    .setFooter(`© MasterBotTeam`,`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
+    .setFooter(`© MasterBotTeam`,`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
     .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
     message.channel.send({embed})
     message.react("✅")
