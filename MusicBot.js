@@ -277,10 +277,10 @@ if (command === 'ping') {
     let author = msg.author;
 
     let status = {
-        online: "<:online:465236219463204874> Online",
-        idle: "<:idle:465236219463204874> Idle",
-        dnd: "<:dnd:465236219463204874> Do Not Disturb",
-        offline: "<:offline:465236219463204874> Offline"
+        online: "<:1_:321591151289171968> Online",
+        idle: "<:2_:321591151289171968> Idle",
+        dnd: "<:3_:321591151289171968> Do Not Disturb",
+        offline: "<:4_:321591151289171968> Offline"
     }
     
     user = user ? user : author;
