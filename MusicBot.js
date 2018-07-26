@@ -277,10 +277,10 @@ if (command === 'ping') {
     let author = msg.author;
 
     let status = {
-        online: "<:1_:321591151289171968> Online",
-        idle: "<:2_:321591151289171968> Idle",
-        dnd: "<:3_:321591151289171968> Do Not Disturb",
-        offline: "<:4_:321591151289171968> Offline"
+        online: "Online",
+        idle: "Idle",
+        dnd: "Do Not Disturb",
+        offline: " Offline"
     }
     
     user = user ? user : author;
@@ -296,7 +296,7 @@ if (command === 'ping') {
     msg.channel.send(uEmbed);
     
 }
-	if (command === 'play') {
+	if (command === 'play' || command === 'p') {
 		if (!args[1]) return msg.reply(`Usage: **${prefix}play** <Song | URL | Playlist URL>.`);
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
@@ -351,18 +351,18 @@ if (command === 'ping') {
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} else if (command === 'skip') {
+	} else if (command === 'skip' || command === 's') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
 		return undefined;
-	} else if (command === 'stop') {
+	} else if (command === 'stop' || command === 'st') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could stop for you.');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return undefined;
-	} else if (command === 'volume') {
+	} else if (command === 'volume' || command === 'v') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		if (!args[1]) return msg.channel.send(`The current volume is: **${serverQueue.volume}**`);
@@ -377,7 +377,7 @@ if (command === 'ping') {
 		.setDescription(`🎶 Now playing: **${serverQueue.songs[0].title}**`)
 		
 		return msg.channel.send(nowembed);
-	} else if (command === 'queue') {
+	} else if (command === 'queue' || command === 'q') {
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let queueembed = new Discord.RichEmbed()
 		
@@ -387,14 +387,14 @@ if (command === 'ping') {
 		.addField("Now Playing", `${serverQueue.songs[0].title}`)
 		
 		return msg.channel.send(queueembed)
-	} else if (command === 'pause') {
+	} else if (command === 'pause' || command === 'ps') {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
 			return msg.channel.send('⏸ Paused the music for you!');
 		}
 		return msg.channel.send('There is nothing playing.');
-	} else if (command === 'resume') {
+	} else if (command === 'resume' || command === 're') {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
