@@ -17,6 +17,9 @@ const youtube = new YouTube("AIzaSyCdv0yGMUc5SAA5KLcEinDLELQii5WsnHA");
 
 const queue = new Map();
 
+var server = {};
+var prefix = '^'
+
 client.on("ready", () => {
     function randomStatus() {
         let status = [`${client.guilds.size} guilds.`, `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`, "b!help | Bolt", "bot.discord.io/bolt", "24/7 | Vote"]
