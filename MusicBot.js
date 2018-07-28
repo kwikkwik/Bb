@@ -264,7 +264,7 @@ if (command === 'ping') {
     msg.channel.send(uEmbed);
     
 };
-	if (command === 'serverinfo') {
+	if (command === 'infoserver1') {
     let sicon       = msg.guild.iconURL;
     let serverEmbed = new Discord.RichEmbed()
         .setDescription("**Server Information**")
@@ -278,7 +278,7 @@ if (command === 'ping') {
 
     msg.channel.send(serverEmbed);
 };
-	if (command === 'userinfo') {
+	if (command === 'infouser1') {
     let user = msg.mentions.users.first();
     let author = msg.author;
 
