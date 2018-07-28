@@ -66,7 +66,7 @@ client.on('message', async msg => { // eslint-disable-line
     command = command.slice(prefix.length)
 	
     // TAG ME IF YOU DON'T KNOW DA' PREFIX
-    const ClientMention = new RegExp(`^<@!?${client.user.id}> help`);
+    const ClientMention = new RegExp(`<@!?${client.user.id}> help`);
     if (msg.content.match(ClientMention)) {
         return msg.reply(`My prefix is **b!** \nJust type **b!help** for all command list that i can run for you :)`);
     };
@@ -91,7 +91,8 @@ client.on('message', async msg => { // eslint-disable-line
 		};
        if (command === 'help') {
                 let helpembed = new Discord.RichEmbed()
-		.setThumbnail('https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048')
+		.setAuthor(`${client.user.Username}`,`https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif`)
+		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
                 .setTitle("Bolt Command List")
                 .addField("Core", "`dev`, `help`, `ping`, `invite`, `stats`, `info`, `setprefix`, `vote`")
 		.addField("Music", "`join`, `leave`, `play|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
