@@ -63,7 +63,7 @@ exports.run = async (client, message, args, tools, map) => {
   .addBlankField()
   .addField('DiscordInfo:', `**Discriminator:** ${user.discriminator}\n**ID:** ${user.id}\n**Username:** ${user.username}`)
   .setAuthor(`Info from ${user.username} in below`, user.displayAvatarURL)
-  .setFooter(`©MasterBot V0.4.4`, client.user.displayAvatarURL)
+  .setFooter(`© MasterBotTeam`, client.user.displayAvatarURL)
   .setColor(stat);
     message.channel.send({embed})
   .catch(e => logger.error(e));
