@@ -18,7 +18,7 @@ const youtube = new YouTube("AIzaSyCdv0yGMUc5SAA5KLcEinDLELQii5WsnHA");
 const queue = new Map();
 
 var server = {};
-var prefix = '^'
+var prefix = 'b!'
 
 client.on("ready", () => {
     function randomStatus() {
@@ -545,7 +545,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'annoying1')) {
+  if (command === 'annoying1') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -563,7 +563,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'troll')) {
+  if (command === 'troll') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -581,7 +581,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'sad')) {
+  if (command === 'sad') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -599,13 +599,13 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'pip')) {
+  if (command === 'pip') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage('Hehehe >:)')
+    message.channel.sendMessage(' ')
     voiceChannel.join()
       .then(connnection => {
         let stream = yt("https://www.youtube.com/watch?v=jE9nFhsdlAo", {audioonly: true});
@@ -617,13 +617,13 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'airhorn')) {
+  if (command === 'airhorn') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage('Hehehe >:)')
+    message.channel.sendMessage(' ')
     voiceChannel.join()
       .then(connnection => {
         let stream = yt("https://www.youtube.com/watch?v=OFr74zI1LBM", {audioonly: true});
@@ -636,13 +636,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'duck')) {
+  if (command === 'duck') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -656,13 +656,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'run')) {
+  if (command === 'run') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -676,13 +676,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'thuglife')) {
+  if (command === 'thuglife') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -696,13 +696,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'funnylaugh')) {
+  if (command === 'funnylaugh') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -716,13 +716,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'titanicfail')) {
+  if (command === 'titanicfail') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -736,13 +736,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'runningman')) {
+  if (command === 'runningman') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
       return message.reply(`Please be in a voice channel first!`);
     }
-    message.channel.sendMessage(':v')
+    message.channel.sendMessage(' ')
     message.react(speaker)
     voiceChannel.join()
       .then(connnection => {
@@ -756,7 +756,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + '20th')) {
+  if (command === '20th') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -776,7 +776,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
   const speaker = client.emojis.find("name", "speaker");
-  if (message.content.startsWith(prefix + 'friendzone')) {
+  if (command === 'friendzone') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -795,7 +795,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'trombone')) {
+  if (command === 'trombone') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -814,7 +814,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'duality')) {
+  if (command === 'duality') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -833,7 +833,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'allnight')) {
+  if (command === 'allnight') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -852,7 +852,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'garox')) {
+  if (command === 'garox') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -871,7 +871,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'egp')) {
+  if (command === 'egp') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -890,7 +890,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'clap')) {
+  if (command === 'clap') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
@@ -910,7 +910,7 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-  if (message.content.startsWith(prefix + 'annoying2')) {
+  if (command === 'annoying2') {
   var voiceChannel = message.member.voiceChannel;
   var yt = require('ytdl-core');
     if (!voiceChannel) {
