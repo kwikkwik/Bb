@@ -135,7 +135,7 @@ client.on('message', async msg => { // eslint-disable-line
         .setFooter("© MasterBotTeam")
         msg.channel.send({ embed: embed })
 })};
-	if (command === '8ball') {
+	if (command === '8ssball') {
 		var tanyas = [':8ball: Absolutely.', ':8ball: Absolutely not.', ':8ball: It is true.', ':8ball: Impossible.', ':8ball: Of course.', ':8ball: I do not think so.', ':8ball: It is true.', ':8ball: It is not true.', ':8ball: I am very undoubtful of that.',':8ball: I am very doubtful of that.', ':8ball: Sources point to no.', ':8ball: Theories prove it.', ':8ball: Reply hazy try again', ':8ball: Ask again later', ':8ball: Better not tell you now', ':8ball: Cannot predict now', ':8ball: Concentrate and ask again'];
         const embed = new Discord.RichEmbed()
         .setDescription(tanyas[Math.floor(Math.random() * tanyas.length)])
