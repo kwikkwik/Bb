@@ -302,6 +302,214 @@ if (command === 'ping') {
     msg.channel.send(uEmbed);
     
 }
+	
+	      if (command == "kiss") {
+      let kiss = [
+        "http://cdn.smosh.com/wp-content/uploads/ftpuploads/bloguploads/awkward-kiss-little-girl.gif",
+        "https://media1.tenor.com/images/9c92434bdeea2df04d67710f338b212d/tenor.gif?itemid=5223535",
+        "https://vignette.wikia.nocookie.net/degrassi/images/1/1d/Dair_kissing_.gif/revision/latest?cb=20150429211626",
+        "https://media.giphy.com/media/xT9IgFh732bmm00u1a/giphy.gif",
+        "https://media.giphy.com/media/10wwy1cJ8j2aD6/giphy.gif",
+        "https://media.giphy.com/media/Nydo55HzhyGqI/giphy.gif",
+        "https://media.giphy.com/media/3og0IvIXD1UrcEvNmw/giphy.gif",
+        
+      ]
+
+      let hugresult = Math.floor((Math.random() * kiss.length));
+      if (!args[0]) {
+          const ghembed = new Discord.RichEmbed()
+              .setColor(`#06238B`)
+              .setTitle(`${message.author.username} Kiss Yourself?? `)
+              .setImage(kiss[hugresult])
+          message.channel.send({
+              embed: ghembed
+          })
+          return;
+      }
+      if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
+          const hembed = new Discord.RichEmbed()
+              .setColor(`#06238B`)
+              .setTitle(`${message.author.username} Kissing ${message.mentions.members.first().user.username}, so sweet :heart_eyes: `)
+              .setImage(kiss[hugresult])
+          message.channel.send({
+              embed: hembed
+          })
+          return;
+      }
+      const ghembed = new Discord.RichEmbed()
+          .setColor(`#06238B`)
+          .setTitle(`${message.author.username} Kiss Yourself?? `)
+          .setImage(kiss[hugresult])
+      message.channel.send({
+          embed: ghembed
+      })
+  }
+        if(command === "kick") {
+if (!message.member.hasPermission('ADMINISTRATOR')) { 
+        message.channel.send (`Sorry ${message.author}, You need ADMINISTRATOR permission to run this command!`); 
+        return; 
+    }
+    
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.kickable) 
+      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+    
+    let reason = args.slice(1).join(' ');
+    if(!reason) reason = "No reason provided";
+    
+    await member.kick(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+
+  }
+  
+  if(command === "ban") {
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    let prefix = config.prefix;
+    let messageArray = message.content.split(" "); 
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let user = message.mentions.users.first() || message.author;    
+if (!message.member.hasPermission('ADMINISTRATOR')) { 
+        message.channel.send (`Sorry ${message.author}, You need ADMINISTRATOR permission to run this command!`); 
+        return; 
+    }
+    
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.bannable) 
+      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+
+    let reason = args.slice(1).join(' ');
+    if(!reason) reason = "No reason provided";
+    
+    await member.ban(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
+    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+  }
+	
+	if (command == "slap") {
+  let kiss = [
+    "https://i.makeagif.com/media/8-19-2015/nLkMFV.gif",
+    "https://media.giphy.com/media/83bGzE1mKEpXO/giphy.gif",
+    "https://media.giphy.com/media/10WtjJwAFYqJPy/giphy.gif",
+    "https://media.giphy.com/media/INuiLQB92kvok/giphy.gif",
+    "https://media.giphy.com/media/MzC4ydlZNhxV6/giphy.gif",
+    "https://media.giphy.com/media/vxvNnIYFcYqEE/giphy.gif",
+    "https://media.giphy.com/media/irU9BlmqEwZwc/giphy.gif",
+    "https://media.giphy.com/media/Y6c59hTH3TJoA/giphy.gif",
+    "https://media.giphy.com/media/l0MYthTiOGtg1zsT6/giphy.gif",
+    "https://media.giphy.com/media/3o72F9iEaswZcxpgnC/giphy.gif",
+    "https://cdn.weeb.sh/images/BJgsX1Kv-.gif",
+    "https://media.giphy.com/media/3oriNXBCGHrzCYIbZK/giphy.gif",
+    "https://media.giphy.com/media/bGnQmK38QoSg8/giphy.gif",
+    "https://media.giphy.com/media/Y6c59hTH3TJoA/giphy.gif",
+    
+  ]
+
+  let hugresult = Math.floor((Math.random() * kiss.length));
+  if (!args[0]) {
+      const ghembed = new Discord.RichEmbed()
+          .setColor(`#06238B`)
+          .setTitle(`${message.author.username} Slapping themself `)
+          .setImage(kiss[hugresult])
+      message.channel.send({
+          embed: ghembed
+      })
+      return;
+  }
+  if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
+      const hembed = new Discord.RichEmbed()
+          .setColor(`#06238B`)
+          .setTitle(`${message.author.username} Slapping ${message.mentions.members.first().user.username} `)
+          .setImage(kiss[hugresult])
+      message.channel.send({
+          embed: hembed
+      })
+      return;
+  }
+}
+
+if (command == "cry") {
+  let kiss = [
+    "https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif",
+    "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif",
+    "https://media.giphy.com/media/k61nOBRRBMxva/giphy.gif",
+    "https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif",
+    "https://media.giphy.com/media/10tIjpzIu8fe0/giphy.gif",
+    "https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif",
+    "https://media.giphy.com/media/6Q3M4BIK0lX44/giphy.gif",
+    "https://media.giphy.com/media/2Qs2hKWMvEzdu/giphy.gif",
+    "https://media.giphy.com/media/Ph8OWoJA2M3eM/giphy.gif",
+    "https://media.giphy.com/media/8ykJ4yAnwgK2I/giphy.gif",
+    "https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif",
+    "https://media.giphy.com/media/l3q2RauzE5Vzf7iYo/giphy.gif",
+    "https://media.giphy.com/media/wViS9n0RqN2/giphy.gif",
+    "https://media.giphy.com/media/3fmRTfVIKMRiM/giphy.gif",
+    "https://media.giphy.com/media/9Jvj3vYjgmqH4AJTkx/giphy.gif",
+    "https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif",
+    "https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif",
+    
+  ]
+  let hugresult = Math.floor((Math.random() * kiss.length));
+  if (!args[0]) {
+      const ghembed = new Discord.RichEmbed()
+          .setColor(`#06238B`)
+          .setTitle(`${message.author.username} Crying alone`)
+          .setImage(kiss[hugresult])
+      message.channel.send({
+          embed: ghembed
+      })
+      return;
+  }
+  if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
+      const hembed = new Discord.RichEmbed()
+          .setColor(`#06238B`)
+          .setTitle(`${message.author.username} Crying with ${message.mentions.members.first().user.username} `)
+          .setImage(kiss[hugresult])
+      message.channel.send({
+          embed: hembed
+      })
+      return;
+  }
+}
+      
+      if(command == "flip") {
+    let embed = new Discord.RichEmbed()
+    .addField("**Result**", `Result: **${Math.floor(Math.random() * 2) == 0 ? "heads" : "tails"}**!`)
+    .setColor("RANDOM")
+    message.channel.send(embed)
+  }
+	
+	      if(command === "dmall") {
+      let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+      if(!message.member.hasPermission("ADMINISTRATOR"))
+          return message.reply({embed: {
+            color: 0x06238B,
+            description: "No permission."
+          }});
+      let DMALL = args.join(" ").slice(0);
+    if (!DMALL) return message.channel.send({embed: {
+      color: 0x06238B,
+      description: `${message.member} Please enter a message to dm all the players in the discord server.`
+    }});
+
+    message.guild.members.forEach((player) => {
+        message.guild.member(player).send({embed: {
+          color: 0x06238B,
+          title: `${message.guild.name}`,
+          description: `${DMALL}`
+        }});
+    });
+    message.channel.send({embed: {
+      color: 0x06238B,
+      description: "All players in this discord server have got your message."
+  }});
+}
 	if (command === 'play' || command === 'p') {
 		if (!args[1]) return msg.reply(`Usage: **${prefix}play** <Song | URL | Playlist URL>.`);
 		const voiceChannel = msg.member.voiceChannel;
@@ -929,6 +1137,160 @@ client.on('message', message => {
       });
   }
 });
+
+client.on(`guildMemberAdd`, async member => {
+    console.log(`${member} has joined the server!`);
+    let welcomechannel = member.guild.channels.find(`name`, "welcome-goodbye", "general");
+    let jEmbed = new Discord.RichEmbed()
+        .setDescription(`:inbox_tray: Welcome ${member} To The Server!`)
+        .setFooter(`Join The Server`)
+        .setTimestamp()
+        .setColor("#20E801");
+    welcomechannel.send(jEmbed);
+});
+
+client.on(`guildMemberRemove`, async member => {
+  console.log(`${member} has left the server`);
+  let welcomechannel = member.guild.channels.find(`name`, "welcome-goodbye", "general");
+  let lEmbed = new Discord.RichEmbed()
+      .setDescription(`:outbox_tray: ${member} has left the server`)
+          .setFooter(`Left The Server`)
+        .setTimestamp()
+      .setColor("#E80101");
+  welcomechannel.send(lEmbed);
+});
+
+client.on(`guildMemberAdd`, async member => {
+    console.log(`${member} has joined the server!`);
+    let welcomechannel = member.guild.channels.find(`name`, "greeting-farewells", "general");
+    let jEmbed = new Discord.RichEmbed()
+        .setDescription(`:inbox_tray: Welcome ${member} To The Server!`)
+        .setFooter(`Join The Server`)
+        .setTimestamp()
+        .setColor("#20E801");
+    welcomechannel.send(jEmbed);
+});
+
+client.on(`guildMemberRemove`, async member => {
+  console.log(`${member} has left the server`);
+  let welcomechannel = member.guild.channels.find(`name`, "greeting-farewells", "general");
+  let lEmbed = new Discord.RichEmbed()
+      .setDescription(`:outbox_tray: ${member} has left the server`)
+          .setFooter(`Left The Server`)
+        .setTimestamp()
+      .setColor("#E80101");
+  welcomechannel.send(lEmbed);
+});
+
+client.on(`guildMemberAdd`, async member => {
+    console.log(`${member} has joined the server!`);
+    let welcomechannel = member.guild.channels.find(`name`, "bot-spam", "general");
+    let jEmbed = new Discord.RichEmbed()
+        .setDescription(`:inbox_tray: Welcome ${member} To The Server!`)
+        .setFooter(`Join The Server`)
+        .setTimestamp()
+        .setColor("#20E801");
+    welcomechannel.send(jEmbed);
+});
+
+client.on(`guildMemberRemove`, async member => {
+  console.log(`${member} has left the server`);
+  let welcomechannel = member.guild.channels.find(`name`, "bot-spam", "general");
+  let lEmbed = new Discord.RichEmbed()
+      .setDescription(`:outbox_tray: ${member} has left the server`)
+          .setFooter(`Left The Server`)
+        .setTimestamp()
+      .setColor("#E80101");
+  welcomechannel.send(lEmbed);
+});
+
+client.on('messageDelete', async (message) => {
+    const logs = message.guild.channels.find('name', 'logs');
+    if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+        await message.guild.createChannel('logs', 'text');
+    }
+    if (!logs) {
+        return console.log('The logs channel does not exist and cannot be created')
+    }
+    const entry = await message.guild.fetchAuditLogs({
+        type: 'MESSAGE_DELETE'
+    }).then(audit => audit.entries.first())
+    let user;
+    if (entry.extra.channel.id === message.channel.id && (entry.target.id === message.author.id) && (entry.createdTimestamp > (Date.now() - 5000)) && (entry.extra.count >= 1)) {
+        user = entry.executor.username
+    } else {
+        user = message.author
+    }
+    const logembed = new Discord.RichEmbed()
+        //.setTitle('Message Deleted')
+        .setAuthor(user.tag, message.author.displayAvatarURL)
+        .addField(`**Message sent by ${message.author.username}> deleted in ${message.channel.name}**\n\n`, message.content)
+        .setColor(message.guild.member(client.user).displayHexColor)
+        .setFooter(`<#${message.channel.id}>`)
+        .setTimestamp()
+    //console.log(entry)
+    logs.send(logembed);
+})
+
+client.on('channelCreate', async (message, channel)  => {
+    const logs = message.guild.channels.find('name', 'logs');
+    if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+        await message.guild.createChannel('logs', 'text');
+    }
+    if (!logs) {
+        return console.log('The logs channel does not exist and cannot be created')
+    }
+  const entry = await message.guild.fetchAuditLogs({
+        type: 'CHANNEL_CREATE'
+    }).then(audit => audit.entries.first())
+  let user;
+    if (message.author) {
+        user = message.author
+    } else {
+        user = message.username
+    } {
+        user = message.channel
+    }
+  const member = message.guild.member(user);
+    const logembed = new Discord.RichEmbed()
+        //.setTitle('Message Deleted')
+        .setAuthor("Master Bot",`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
+        .setTitle(`Created Channel`)
+        .setDescription(`\`\`\`Succesfully created channel\`\`\``)
+        .setColor(message.guild.member(client.user).displayHexColor)
+        .setTimestamp()
+    logs.send(logembed);
+})
+
+client.on('channelDelete', async (message, channel)  => {
+    const logs = message.guild.channels.find('name', 'logs');
+    if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+        await message.guild.createChannel('logs', 'text');
+    }
+    if (!logs) {
+        return console.log('The logs channel does not exist and cannot be deleted')
+    }
+  const entry = await message.guild.fetchAuditLogs({
+        type: 'CHANNEL_DELETE'
+    }).then(audit => audit.entries.first())
+  let user;
+    if (message.author) {
+        user = message.author
+    } else {
+        user = message.username
+    } {
+        user = message.channel
+    }
+  const member = message.guild.member(user);
+    const logembed = new Discord.RichEmbed()
+        //.setTitle('Message Deleted')
+        .setAuthor("Master Bot",`https://cdn.discordapp.com/avatars/464511870993432578/30a3f8c3f24bf6c066c4cee279626bb5.png?size=2048`)
+        .setTitle(`Deleted Channel`)
+        .setDescription(`\`\`\`Succesfully deleted channel\`\`\``)
+        .setColor(message.guild.member(client.user).displayHexColor)
+        .setTimestamp()
+    logs.send(logembed);
+})
 
 
 client.login(process.env.TOKEN);
