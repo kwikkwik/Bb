@@ -38,7 +38,7 @@ exports.run = (client, message, args, tools) => {
     if (!message.mentions.users.first()) return message.channel.send(`Please mention someone!`).then(msg => {
         msg.delete(3000)
     });
-    message.channel.send(`<@${message.author.id}> Make ${args[0]} Cry...`, {
+    message.channel.send(`<@${message.author.id}> Make ${args[0]} Crying...`, {
         embed: patEmb
     });
 
