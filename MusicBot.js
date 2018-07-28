@@ -523,5 +523,407 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'aplay')) {
+    var yt = require('ytdl-core');
+    var voiceChannel = message.member.voiceChannel;
+    var YouTubeURL = message.content.split(" ").slice(1).join(" ")
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    voiceChannel.join()
+      .then(connnection => {
+        let video = yt(YouTubeURL, {audioonly: true});
+        const dispatcher = connnection.playStream(video);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'annoying1')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'troll')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=acEYHN3NTOw", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'sad')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=OS8zUCfCiz0", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'pip')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=jE9nFhsdlAo", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'airhorn')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=OFr74zI1LBM", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'duck')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=Fw3RB7xnb80", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'run')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=RNsRT0uPFD4", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'thuglife')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=Rq2vdkfjaMg", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'funnylaugh')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=29UH3Yovrn0", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'titanicfail')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=CVCuN_q1K_g", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'runningman')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=TFPG65B7-dE", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + '20th')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=VtZx6AppJ5M", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  const speaker = client.emojis.find("name", "speaker");
+  if (message.content.startsWith(prefix + 'friendzone')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react(speaker)
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=RhzArIfe_Qs", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'trombone')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage(':v')
+    message.react("🔊")
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=CQeezCdF4mk", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'duality')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Nicky Romero')
+    message.react("🔊")
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=xbhFbG1eaEA", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'allnight')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Listening')
+    message.react("🔊")
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=_sPBHFYi_n4", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'garox')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Mamang Sallamualaikum')
+    message.react("🔊")
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=oTJKrb5Qm0E", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'egp')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('EGP...EGP ga gue pikirin.')
+    message.react("🔊")
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=KTN1knGr-Xs", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'clap')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('')
+        message.react("🔊") 
+      .then(() => message.react('👍'))
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=jDOrc8FmDy4", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'annoying2')) {
+  var voiceChannel = message.member.voiceChannel;
+  var yt = require('ytdl-core');
+    if (!voiceChannel) {
+      return message.reply(`Please be in a voice channel first!`);
+    }
+    message.channel.sendMessage('Hehehe >:)')
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt("https://www.youtube.com/watch?v=qZiMqiNVN0U", {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+});
+
 
 client.login(process.env.TOKEN);
