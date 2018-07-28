@@ -92,6 +92,7 @@ client.on('message', async msg => { // eslint-disable-line
                 .setTitle("Bolt Command List")
                 .addField("Core", "`help`, `ping`, `invite`, `stats`, `info`, `setprefix`")
 		.addField("Music", "`play`, `skip`, `stop`, `queue`, `pause`, `resume`, `volume`, `np`") 
+		.addField("Soundboard", "`airhorn`  `clap`  `cena`  `duck`  `pip`  `sad`  `troll`  `trombone`")
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
