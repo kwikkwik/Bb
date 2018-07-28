@@ -231,7 +231,7 @@ if (command === 'ping') {
 
         msg.channel.send(statembed);	
 	};
-	if (command === 'eval') {
+	if (command === 'evl') {
     if (msg.author.id !== '335035386923581440') return;
     try {
         let codein = args.slice(1).join(' ');
