@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const gifSearch = require("gif-search");
-const PREFIX = require("../config.json")
+const PREFIX = "b!";
 
 exports.run = (bot, message, args) => {
   if (message.author.bot) return;
