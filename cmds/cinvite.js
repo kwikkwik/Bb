@@ -13,7 +13,7 @@ exports.run = async (anko, message, args, color) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["createinvite"],
+  aliases: ['createinvite', 'ci'],
   permLevel: 0
 };
 
