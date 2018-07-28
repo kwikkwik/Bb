@@ -81,8 +81,8 @@ client.on('message', async msg => { // eslint-disable-line
     }
        if (command === 'changelog') {
 	        let embed = new Discord.RichEmbed()
-		.setTitle("Bolt Changelog | 27 May 2018")
-		.setDescription("**[+] Added | [-] Removed | [*] Changed/Fixed** \n\n**[+]** Commands: `sayd` \n**[*]** Commands: `say` `sayembed`")
+		.setTitle("Bolt Changelog | 28 Jul 2018")
+		.setDescription("**[+] Added | [-] Removed | [*] Changed/Fixed** \n\n**[+]** Commands: `slap`, `kiss`, `cry`, `join`, `leave`, `bugreport`, `report`, `warn`, `logs`, `greeting-farewells`, `SOUNDBOARD`, `dev`, `addrole`, `removerole`, `ban`, `kick`, `mute`, `tempmute`, `roledice` \n**[*]** Commands: `help`, `info`, `ping` ``")
 		.setFooter("© MasterBotTeam")
 		.setColor('GREEN')
 		.setTimestamp()
@@ -91,7 +91,6 @@ client.on('message', async msg => { // eslint-disable-line
 		};
        if (command === 'help') {
                 let helpembed = new Discord.RichEmbed()
-		.setAuthor(`${client.user.Username}`,`https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif`)
 		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
                 .setTitle("Bolt Command List")
                 .addField("Core", "`dev`, `help`, `ping`, `invite`, `stats`, `info`, `setprefix`, `vote`")
@@ -101,7 +100,7 @@ client.on('message', async msg => { // eslint-disable-line
 		.addField("Fun", "`8ball`, `bunny`, `cat`, `dog`, `flip`, `givecandy`, `lucknumber`, `mcsay`, `rolldice`, `rps`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`, `kiss`, `cry`, `slap`")
 		.addField("Administration", "`addrole`, `ban`, `kick`, `mute`, `prune|purge`, `removerole`, `tempmute`")
-		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt)     [Vote](https://discordbots.org/bot/471150809196003328/vote)")
+		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt) | [Vote](https://discordbots.org/bot/471150809196003328/vote)")
 		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
