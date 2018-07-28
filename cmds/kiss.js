@@ -8,6 +8,13 @@ exports.run = (client, message, args, tools) => {
         "https://media.giphy.com/media/xT9IgFh732bmm00u1a/giphy.gif",
         "https://media.giphy.com/media/10wwy1cJ8j2aD6/giphy.gif",
         "https://media.giphy.com/media/Nydo55HzhyGqI/giphy.gif",
+        "http://cdn.smosh.com/wp-content/uploads/ftpuploads/bloguploads/awkward-kiss-little-girl.gif",
+        "https://media1.tenor.com/images/9c92434bdeea2df04d67710f338b212d/tenor.gif?itemid=5223535",
+        "https://vignette.wikia.nocookie.net/degrassi/images/1/1d/Dair_kissing_.gif/revision/latest?cb=20150429211626",
+        "https://media.giphy.com/media/xT9IgFh732bmm00u1a/giphy.gif",
+        "https://media.giphy.com/media/10wwy1cJ8j2aD6/giphy.gif",
+        "https://media.giphy.com/media/Nydo55HzhyGqI/giphy.gif",
+        "https://media.giphy.com/media/3og0IvIXD1UrcEvNmw/giphy.gif",
         "https://media.giphy.com/media/3og0IvIXD1UrcEvNmw/giphy.gif",];
     var rand = Math.floor(Math.random() * images.length);
     var randomImage = images[rand];
