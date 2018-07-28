@@ -81,8 +81,8 @@ client.on('message', async msg => { // eslint-disable-line
     }
        if (command === 'changelog') {
 	        let embed = new Discord.RichEmbed()
-		.setTitle("Bolt Changelog | 28 Jul 2018")
-		.setDescription("**[+] Added | [-] Removed | [*] Changed/Fixed** \n\n**[+]** Commands: `slap`, `kiss`, `cry`, `join`, `leave`, `bugreport`, `report`, `warn`, `logs`, `greeting-farewells`, `SOUNDBOARD`, `dev`, `addrole`, `removerole`, `ban`, `kick`, `mute`, `tempmute`, `roledice` \n**[*]** Commands: `help`, `info`, `ping` ``")
+		.setAuthor("Bolt Changelog | 28 Jul 2018",`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
+		.setDescription("**[+] Added | [-] Removed | [#] Changed/Fixed** \n\n**[+]** Commands: `slap`, `kiss`, `cry`, `join`, `leave`, `bugreport`, `report`, `warn`, `logs`, `greeting-farewells`, `SOUNDBOARD`, `dev`, `addrole`, `removerole`, `ban`, `kick`, `mute`, `tempmute`, `roledice` \n**[#]** Commands: `help`, `info`, `ping`")
 		.setFooter("© MasterBotTeam")
 		.setColor('GREEN')
 		.setTimestamp()
