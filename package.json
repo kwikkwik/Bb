@@ -29,7 +29,9 @@
     "quick.db": "^6.2.1",
     "memejs": "1.0.7",
     "cleverbot.io": "1.0.4",
-    "nekos.life": "1.0.5"
+    "nekos.life": "1.0.5",
+    "request": "^2.87.0",
+    "superagent": "^3.8.3"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
