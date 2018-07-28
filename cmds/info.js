@@ -40,7 +40,7 @@ if (message.channel.type === 'dm') return;
     .addField("Library: ", "discord.js", true)
     .addField("Node: ", `${process.version}`, true)
     .addField("Ram Usage", `${Math.round(used * 100) / 100}MB`, true)
-    .addField("Uptime: ", `${days} Days ${hours} Hours ${mins} Minutes ${realTotalSecs} Seconds`, true)
+    .addField("Uptime: ", `${days} Days, ${hours} Hours, ${mins} Minutes, ${realTotalSecs} Seconds`, true)
     .addField("Created Date", `${moment.utc(client.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
     .setFooter(`© MasterBotTeam`,`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
     .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
