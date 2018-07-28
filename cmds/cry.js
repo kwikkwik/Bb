@@ -23,10 +23,10 @@ exports.run = (client, message, args, tools) => {
     var randomImage = images[rand];
 
     const patEmb = new Discord.RichEmbed()
-        .setColor(0x00B6CB)
+        .setColor('GREEN')
         .setImage(randomImage);
     const sadEmb = new Discord.RichEmbed()
-        .setColor(0x00B6CB)
+        .setColor('GREEN')
         .setImage('https://media.giphy.com/media/Y4z9olnoVl5QI/giphy.gif');
     if (!args[0]) {
         message.channel.send(`<@${message.author.id}> Crying alone...`, {
