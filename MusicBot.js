@@ -99,7 +99,7 @@ client.on('message', async msg => { // eslint-disable-line
 		.addField("Utility", "`userinfo`, `serverinfo`, `avatar`, `weather`, `discrim`")
 		.addField("Fun", "`8ball`, `say`, `sayd`, `sayembed`, `cleverbot`, `randommeme`")
 		.addField("Reaction", "`pat`, `hug`")
-		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt)")
+		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt)\n[Vote](https://discordbots.org/bot/471150809196003328/vote)")
 		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
@@ -187,6 +187,7 @@ if (command === 'ping') {
 		
 		.setColor("GREEN")
 		.addField("Invite Bolt", "[The Link](https://bot.discord.io/bolt)", true)
+		.addField("Vote Bolt","[Vote](https://discordbots.org/bot/471150809196003328/vote)", true)
 		.setThumbnail("https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048")
                 .setFooter("© MasterBotTeam")
 		
@@ -216,7 +217,7 @@ if (command === 'ping') {
       const memory_on_bot = (process.memoryUsage().rss / 1024 / 1024).toFixed(2)
 
         const statembed = new Discord.RichEmbed()
-        .setColor(0xff2f2f)
+        .setColor("GREEN")
         .setDescription("📊 Bolt Stats")
         .setFooter(`Bolt | ${shardall} Shard`)
         .setTimestamp()
@@ -227,7 +228,7 @@ if (command === 'ping') {
         .addField("Bot Informations:", `• Bot Developer: ${owner} \n• Bot Version: ${packages.version}`, true)
         .addField("CPU Usage:", `• ${Math.round(ccpu * 100) / 100}%`, true)
 	
-	.addField("Usefull Links", "[Invite Me](https://bot.discord.io/Bolt)")
+	.addField("Usefull Links", "[Invite Me](https://bot.discord.io/Bolt)\n[Vote](https://discordbots.org/bot/471150809196003328/vote)")
 
         msg.channel.send(statembed);	
 	};
