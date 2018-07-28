@@ -10,6 +10,13 @@ exports.run = async (anko, message, args, color) => {
   });
 }
 
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["createinvite"],
+  permLevel: 0
+};
+
 exports.help = {
   name: 'createinvite',
 }
