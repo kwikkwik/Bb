@@ -28,7 +28,7 @@ if (message.channel.type === 'dm') return;
     .setAuthor(`${client.user.username} | Bot Info`,`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
     .setTitle("Invite me!") // TITLE
     .setURL('https://discordapp.com/oauth2/authorize?client_id=471150809196003328&scope=bot&permissions=2146958591') // THIS WILL SET THE TITLE URL TO "www.google.com" 
-    .setThumbnail('https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048')
+    .setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
     .setDescription("Bot Info!")
     .addField("Name", `__**${client.user.username}**__`, true)
     .addField("Developer", "`_Brickmaster_#0218`", true)
@@ -43,7 +43,7 @@ if (message.channel.type === 'dm') return;
     .addField("Uptime: ", `${days} Days, ${hours} Hours, ${mins} Minutes, ${realTotalSecs} Seconds`, true)
     .addField("Created Date", `${moment.utc(client.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
     .setFooter(`© MasterBotTeam`,`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
-    .setTimestamp() // SHOWS THE TIME OF THE EMBED CREATED
+    .setTimestamp()
     message.channel.send({embed})
     message.react("✅")
 }
