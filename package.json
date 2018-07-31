@@ -38,7 +38,9 @@
     "enmap": "^2.7.0",
     "enmap-sqlite": "^2.0.3",
     "child_process": "^1.0.2",
-    "google-translate-api": "^2.3.0"
+    "google-translate-api": "^2.3.0",
+    "request-promise-native": "^1.0.5",
+    "cheerio": "^0.22.0"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
