@@ -375,62 +375,17 @@ if (command === 'ping') {
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
 		return msg.channel.send(`I set the volume to: **${args[1]}**`);
 	} else if (command === 'np') {
-  const serverQueue = client.opus.guildQueue(msg.guild.id);
-  if(!serverQueue) return msg.channel.send('💤Not Playing anything right now');
-  const duration = (serverQueue.songs[0].duration.minutes*60000) + ((serverQueue.songs[0].duration.seconds%60000)*1000);
-  const persentase = serverQueue.connection.dispatcher.time/duration;
-  const curentDurationMinute = Math.floor(serverQueue.connection.dispatcher.time/60000) < 10 ? `0${Math.floor(serverQueue.connection.dispatcher.time/60000)}` : Math.floor(serverQueue.connection.dispatcher.time/60000);
-  const currentDurationSeconds = Math.floor((serverQueue.connection.dispatcher.time%60000)/1000) < 10 ? `0${Math.floor((serverQueue.connection.dispatcher.time%60000)/1000)}` : Math.floor((serverQueue.connection.dispatcher.time%60000)/1000);
-  const endDurationMinute = serverQueue.songs[0].duration.minutes < 10 ? `0${serverQueue.songs[0].duration.minutes}` : serverQueue.songs[0].duration.minutes;
-  const endDurationSeconds = serverQueue.songs[0].duration.seconds < 10 ? `0${serverQueue.songs[0].duration.seconds}` : serverQueue.songs[0].duration.seconds;
-  
-  const emb = new RichEmbed()
-  .setColor(client.color)
-  .setAuthor(serverQueue.songs[0].author.tag, serverQueue.songs[0].author.avatarURL)
-  .setTitle(serverQueue.songs[0].title)
-  .setURL(serverQueue.songs[0].url)
-  .setThumbnail(serverQueue.songs[0].thumbnail)
-  .setDescription(`▶ ${progressBar(persentase)} \`[${curentDurationMinute}:${currentDurationSeconds} - ${endDurationMinute}:${endDurationSeconds}]\`🔊`);
-  
-  return msg.channel.send('🎶 **Now playing...**', { embed: emb});
-};
-
-function progressBar(percent){
-	let num = Math.floor(percent*12);
-	if(num === 1){
-		return '🔘▬▬▬▬▬▬▬▬▬▬▬';
-	}else if(num === 2){
-		return '▬🔘▬▬▬▬▬▬▬▬▬▬';
-	}else if(num === 3){
-		return '▬▬🔘▬▬▬▬▬▬▬▬▬';
-	}else if(num === 4){
-		return '▬▬▬🔘▬▬▬▬▬▬▬▬';
-	}else if(num === 5){
-		return '▬▬▬▬🔘▬▬▬▬▬▬▬';
-	}else if(num === 6){
-		return '▬▬▬▬▬🔘▬▬▬▬▬▬';
-	}else if(num === 7){
-		return '▬▬▬▬▬▬🔘▬▬▬▬▬';
-	}else if(num === 8){
-		return '▬▬▬▬▬▬▬🔘▬▬▬▬';
-	}else if(num === 9){
-		return '▬▬▬▬▬▬▬▬🔘▬▬▬';
-	}else if(num === 10){
-		return '▬▬▬▬▬▬▬▬▬🔘▬▬';
-	}else if(num === 11){
-		return '▬▬▬▬▬▬▬▬▬▬🔘▬';
-	}else if(num === 12){
-		return '▬▬▬▬▬▬▬▬▬▬▬🔘';
-	}else{
-		return '🔘▬▬▬▬▬▬▬▬▬▬▬';
-	}
-}
-	} else if (command === 'queue' || command === 'q') {
+		if (!serverQueue) return msg.channel.send('There is nothing playing.');
+		let nowembed = new Discord.RichEmbed()
+		
+		.setDescription(`ðŸŽ¶ Now playing: **${serverQueue.songs[0].title}**`)
+		
+		return msg.channel.send(nowembed);
+	} else if (command === 'queue') {
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let queueembed = new Discord.RichEmbed()
 		
 		.setTitle("Song Queue")
-		.setColor("GREEN")
 		.setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}`)
 		.addField("Now Playing", `${serverQueue.songs[0].title}`)
 		
