@@ -6,7 +6,7 @@ exports.run = async (client, msg, args) => {
 	try{
 		const data = await scrape(client);
 		const emb = new RichEmbed()
-		.setColor('GREEN')
+		.setColor(client.color)
 		.setDescription(data.map((x,d)=> `${number[d]} - [${x.title}](${x.link})`))
 		.setFooter('Powered by minecraft.net', 'https://minecraft.net/android-icon-192x192.png');
 		fetchMessage.edit(emb);
