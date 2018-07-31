@@ -41,6 +41,7 @@
     "google-translate-api": "^2.3.0",
     "request-promise-native": "^1.0.5",
     "cheerio": "^0.22.0",
+    "canvas": "^1.6.11",
     "canvas-constructor": "^1.0.1"
   },
   "devDependencies": {
