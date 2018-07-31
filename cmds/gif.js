@@ -11,7 +11,7 @@ module.exports.run = (bot, message, args, ops) => {
         gifUrl => {
         let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
         var embed = new Discord.RichEmbed()
-            .setColor(`#${randomcolor}`)
+            .setColor('GREEN')
             .setTimestamp() 
             .setImage(gifUrl)
             .setFooter(`Requested by: ${message.author.tag}`);
