@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const gifSearch = require("gif-search");
 
 
-module.exports.run = (bot, message, args, ops, prefix) => {
+module.exports.run = (bot, message, args, ops) => {
  
 
-    if (!args[0]) return message.channel.send("`${prefix}gif <gif name>`");
+    if (!args[0]) return message.channel.send("`(prefix)gif <gif name>`");
 
     gifSearch.query(args[0]).then(
         gifUrl => {
