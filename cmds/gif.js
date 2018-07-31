@@ -1,9 +1,8 @@
 const Discord = require("discord.js");
 const gifSearch = require("gif-search");
-const config = require("./config.js")
 
 
-module.exports.run = (bot, message, args, ops) => {
+module.exports.run = (bot, message, args, ops, prefix) => {
  
 
     if (!args[0]) return message.channel.send("`${config.prefix}gif <gif name>`");
