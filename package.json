@@ -42,7 +42,8 @@
     "request-promise-native": "^1.0.5",
     "cheerio": "^0.22.0",
     "canvas": "^1.6.11",
-    "canvas-constructor": "^1.0.1"
+    "canvas-constructor": "^1.0.1",
+    "gif-search": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
