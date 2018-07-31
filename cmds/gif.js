@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const gifSearch = require("gif-search");
-const prefix = require("../config.json")
+const prefix = require("../config.js")
 
 
 module.exports.run = (bot, message, args, ops) => {
