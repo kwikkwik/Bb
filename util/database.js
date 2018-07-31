@@ -1,6 +1,6 @@
 const enmap = require('enmap');
 const sql = require('enmap-sqlite');
-const config = require('../../configbot.json').prefix;
+const config = require('../configbot.json').prefix;
 
 exports.setguild = new enmap({provider: new sql({name: "guilds"})});
 exports.pguild = new enmap({provider: new sql({name: "pointguild"})});
