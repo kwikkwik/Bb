@@ -34,7 +34,7 @@ async function getShip(client, ship1, ship2){
 	const user2 = await client.snek.get(ship2.replace(link, '.jpg'));
   const moe = await client.snek.get('https://cdn.glitch.com/efe3bf10-38d3-4ce6-b72c-a74e2a6b50f6%2F1530760219.png?1530760650106');
 	return new Canvas(256, 128)
-    .setColor('GREEN')
+    .setColor(client.color)
     .addImage(user1.body, 0, 0, 128, 128)
     .addImage(user2.body, 128, 0, 128, 128)
     .addImage(moe.body, 106, 51, 44, 38)
