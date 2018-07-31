@@ -34,7 +34,9 @@
     "superagent": "^3.8.3",
     "gif-search": "^2.0.1",
     "request-promise-native": "^1.0.5",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "enmap": "^2.7.0",
+    "enmap-sqlite": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
