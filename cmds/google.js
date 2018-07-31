@@ -30,7 +30,7 @@ exports.run = async (client, msg, args) => {
 	results = results.filter(r => r.teksLink && r.description).slice(0, 3);
 	if(!results.join(' ')) return searchMsg.edit('No results found');
 	const emb = new RichEmbed()
-	.setColor(client.color)
+	.setColor('GREEN')
 	.setDescription(results.map(x => `${x.teksLink}\n${x.description}` ).join('\n'))
 	.setFooter('Powered by Google', 'http://i.imgur.com/b7k7puJ.jpg');
 	searchMsg.edit(emb);
