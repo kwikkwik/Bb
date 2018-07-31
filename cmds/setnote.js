@@ -1,4 +1,4 @@
-const db = require('../../util/database.js');
+const db = require('../util/database.js');
 
 exports.run = (client, msg, args) => {
   if(args.length < 1) return args.missing(msg, 'No text added', this.help);

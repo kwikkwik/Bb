@@ -1,4 +1,4 @@
-const { userprof } = require('../../util/database.js');
+const { userprof } = require('../util/database.js');
 
 exports.run = (client, msg, args) => {
   if(!args[0]){

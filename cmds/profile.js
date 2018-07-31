@@ -1,4 +1,4 @@
-const db = require('../../util/database.js');
+const db = require('../util/database.js');
 const { RichEmbed } = require('discord.js');
 
 exports.run = async (client, msg, args = []) => {
