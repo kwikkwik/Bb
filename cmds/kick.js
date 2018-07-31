@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
-const config = require("../config.js");
 
 module.exports.run = async (bot, message, args, ops) => {
 
   
-  if(args[0] == "help"){ message.reply(`Usage: \`${config.prefix}kick <@mention> <reason>\``);
+  if(args[0] == "help"){ message.reply(`Usage: \`(prefix)kick <@mention> <reason>\``);
 return;
                        }
     
