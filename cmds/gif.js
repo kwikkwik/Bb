@@ -5,7 +5,7 @@ const gifSearch = require("gif-search");
 module.exports.run = (bot, message, args, ops, prefix) => {
  
 
-    if (!args[0]) return message.channel.send("`${config.prefix}gif <gif name>`");
+    if (!args[0]) return message.channel.send("`${prefix}gif <gif name>`");
 
     gifSearch.query(args[0]).then(
         gifUrl => {
