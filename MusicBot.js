@@ -337,26 +337,37 @@ if (command === 'ping') {
 					
 					msg.channel.send(selectembed)
 					// eslint-disable-next-line max-depth
-					try {
-						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
-							maxMatches: 1,
-							time: 10000,
-							errors: ['time']
-						});
-						           selection.delete();
-					} catch (err) {
-						console.error(err);
-						return msg.channel.send('No or invalid value entered, cancelling video selection.');
-					}
-					const videoIndex = parseInt(response.first().content);
-					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
-				} catch (err) {
-					console.error(err);
-					return msg.channel.send('🆘 I could not obtain any search results.');
-				}
-			}
-			return handleVideo(video, msg, voiceChannel);
-		}
+                    try {
+                        var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
+                            maxMatches: 1,
+                            time: 15000,
+                            errors: ['time']
+                        });
+                                                selection.delete();
+                    } catch (err) {
+                        console.error(err);
+                        return msg.channel.send({
+            embed: {
+                color: 0x06238B,
+                description: 'No or invalid value entered, cancelling video selection.'
+            }
+        })
+                        selection.delete();
+                    }
+                    const videoIndex = parseInt(response.first().content);
+                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
+                } catch (err) {
+                    console.error(err)
+                    return msg.channel.send({
+            embed: {
+                color: 0x06238B,
+                description: `No Results Found With That Query!`
+            }
+        })
+                }
+            }
+            return handleVideo(video, msg, voiceChannel);
+}
 	} else if (command === 'skip' || command === 's') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
