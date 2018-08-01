@@ -320,23 +320,27 @@ if (command === 'ping') {
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
-			return msg.channel.send(`✅ Playlist: **${playlist.title}** has been added to the queue!`);
-		} else {
-			try {
-				var video = await youtube.getVideo(url);
-			} catch (error) {
-				try {
-					var videos = await youtube.searchVideos(searchString, 10);
-					let index = 0;
-                                        let selectembed = new Discord.RichEmbed()
-					
-					.setTitle("Song Selection")
-					.setColor("GREEN")
-					.setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
-					.setFooter("Please provide a value to select one of the search results ranging from 1-10.")
-					
-					msg.channel.send(selectembed)
-					// eslint-disable-next-line max-depth
+            return msg.channel.send({
+            embed: {
+                color: 0x06238B,
+                description: `⏺ *${playlist.title}* Has Been Added To **Queue** !`
+            }
+        })
+        } else {
+            try {
+                var video = await youtube.getVideo(url);
+            } catch (error) {
+                try {
+                    var videos = await youtube.searchVideos(searchString, 10);
+                    let index = 0;
+                    var selection = await msg.channel.send({
+            embed: {
+                color: 0x06238B,
+                description: `**🎶 | Search Results | Select from 1 - 10**\n
+${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
+            }
+        })
+ 
                     try {
                         var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
                             maxMatches: 1,
