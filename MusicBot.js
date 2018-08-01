@@ -66,9 +66,9 @@ client.on('message', async msg => { // eslint-disable-line
     command = command.slice(prefix.length)
 	
     // TAG ME IF YOU DON'T KNOW DA' PREFIX
-    const ClientMention = new RegExp(`^<@!?${client.user.id}> help`);
+    const ClientMention = new RegExp(`<@${client.user.id}> help`);
     if (msg.content.match(ClientMention)) {
-        return msg.reply(`My prefix is **b!** \nJust type **b!help** for all command list that i can run for you :)`);
+        return msg.reply("Hello, My Name is **Bolt**\nMy prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me! Type `" + PREFIX + "invite` thanks.");
     };
 	
 // Commands
@@ -1036,33 +1036,6 @@ client.on('message', message => {
   }
 });
 
-client.on("message", async autoresponder => {
-  var PREFIXES = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-
-  if (!PREFIXES[autoresponder.guild.id]) {
-    PREFIXES[autoresponder.guild.id] = {
-      PREFIXES: DEFAULTPREFIX
-    };
-  }
-
-  var PREFIX = PREFIXES[autoresponder.guild.id].PREFIXES;
-
-  if (autoresponder.author.bot) return;
-  if (autoresponder.channel.type === "dm") return;
-
-  let msg = autoresponder.content.toLowerCase();
-  let sender = autoresponder.author;
-  if (autoresponder.content.startsWith(PREFIX)) return;
-
-  if (autoresponder.content === `<@${client.user.id}>`) {
-    return autoresponder.reply("Hello, My Name is **Bolt**\nMy prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me! Type `" + PREFIX + "invite` thanks.")
-  }
-
-  if (autoresponder.content === `<@!${client.user.id}>`) {
-    return autoresponder.reply("Hello, My Name is **Bolt**\nMy prefix is `" + PREFIX + "` \nneed help? type `" + PREFIX + "help`\nSupport Me! Type `" + PREFIX + "invite` thanks.")
-  }
-
-});
 
 
 client.login(process.env.TOKEN);
