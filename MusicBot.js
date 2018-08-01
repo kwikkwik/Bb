@@ -374,17 +374,19 @@ if (command === 'ping') {
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
 		return msg.channel.send(`I set the volume to: **${args[1]}**`);
-	} else if (command === 'np') {
+	} else if (command === 'np' || command === 'nowplaying') {
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let nowembed = new Discord.RichEmbed()
 		
-		.setDescription(`ðŸŽ¶ Now playing: **${serverQueue.songs[0].title}**`)
+		.setColor('GREEN')
+		.setDescription(`**Now playing: **${serverQueue.songs[0].title}**`)
 		
 		return msg.channel.send(nowembed);
-	} else if (command === 'queue') {
+	} else if (command === 'queue' || command === 'q') {
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let queueembed = new Discord.RichEmbed()
 		
+		.setColor('GREEN')
 		.setTitle("Song Queue")
 		.setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}`)
 		.addField("Now Playing", `${serverQueue.songs[0].title}`)
@@ -451,9 +453,9 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
   .setColor("GREEN")
   .setAuthor(`Added to Queue`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
-  .addField('Title', `__[${song.title}](${song.url})__`, true)
+  .addField('Title', `__[${song.title}](${song.url})__`, false)
   .addField('Video ID', `${song.id}`, true)
-  .addField("Duration", `${song.durationh}Hours ${song.durationm}Minutes ${song.durations}Seconds`, true)
+  .addField("Duration", `${song.durationh} Hours, ${song.durationm} Minutes, ${song.durations} Seconds`, true)
   .setTimestamp();
 		
 	        return msg.channel.send(qaddembed);
@@ -487,9 +489,9 @@ function play(guild, song) {
   .setColor("GREEN")
   .setAuthor(`Start Playing`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
-  .addField('Title', `__[${song.title}](${song.url})__`, true)
+  .addField('Title', `__[${song.title}](${song.url})__`, false)
   .addField('Video ID', `${song.id}`, true)
-  .addField("Duration", `${song.durationh}Hours ${song.durationm}Minutes ${song.durations}Seconds`, true)
+  .addField("Duration", `${song.durationh} Hours, ${song.durationm} Minutes, ${song.durations} Seconds,`, true)
   .addField("Volume", `${serverQueue.volume}%`, true)
   .setFooter("If you can't hear the music, please reconect. If you still don't hear it, maybe the bot is restarting!")
   .setTimestamp();
