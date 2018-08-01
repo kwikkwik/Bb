@@ -94,7 +94,7 @@ client.on('message', async msg => { // eslint-disable-line
 		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
                 .setTitle("Bolt Command List")
                 .addField("Core", "`bugreport`, `dev`, `help`, `ping`, `invite`, `stats`, `info`, `setprefix`, `vote`")
-		.addField("Music", "`join`, `leave`, `play|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
+		.addField("Music", "`join`, `leave`, `|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
 		.addField("Soundboard", "`airhorn`,  `clap`,  `cena`,  `duck`,  `pip`, `sad`,  `troll`,  `trombone`")
 		.addField("Utility", "`avatar`, `cinvite`, `discrim`, `google`, `img`, `invitelist`, `listinvite`, `listemoji`, `poll`, `report`, `serverinfo`, `sgif`, `timer`, `translate`, `userinfo`, `urban`, `warn`, `weather`")
 		.addField("Fun", "`8ball`, `ask`, `beautiful`, `bunny`, `cat`, `cmm`, `dog`, `emojify`, `flip`, `gif`, `givecandy`, `lucknumber`, `mcsay`, `osu`, `rolldice`, `rps`, `say`, `sayd`, `sayembed`, `ship`, `cleverbot`, `randommeme`")
@@ -322,8 +322,8 @@ if (command === 'ping') {
 			}
             return msg.channel.send({
             embed: {
-                color: 0x06238B,
-                description: `⏺ *${playlist.title}* Has Been Added To **Queue** !`
+                color: 0x32d732,
+                description: `:heavy_check_mark: *${playlist.title}* Has Been Added To **Queue** !`
             }
         })
         } else {
@@ -335,7 +335,7 @@ if (command === 'ping') {
                     let index = 0;
                     var selection = await msg.channel.send({
             embed: {
-                color: 0x06238B,
+                color: 0x32d732,
                 description: `**🎶 | Search Results | Select from 1 - 10**\n
 ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
             }
@@ -394,7 +394,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let nowembed = new Discord.RichEmbed()
 		
-		.setColor('GREEN')
+		.setColor('0x32d732')
 		.setDescription(`**Now playing: **${serverQueue.songs[0].title}**`)
 		
 		return msg.channel.send(nowembed);
@@ -402,7 +402,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let queueembed = new Discord.RichEmbed()
 		
-		.setColor('GREEN')
+		.setColor('0x32d732')
 		.setTitle("Song Queue")
 		.setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}`)
 		.addField("Now Playing", `${serverQueue.songs[0].title}`)
@@ -466,7 +466,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		if (playlist) return undefined;
 		let qaddembed = new Discord.RichEmbed()
 		
-  .setColor("GREEN")
+  .setColor('0x32d732')
   .setAuthor(`Added to Queue`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, false)
@@ -502,7 +502,7 @@ function play(guild, song) {
 	
 	let splayembed = new Discord.RichEmbed()
 	
-  .setColor("GREEN")
+  .setColor('0x32d732')
   .setAuthor(`Start Playing`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, false)
