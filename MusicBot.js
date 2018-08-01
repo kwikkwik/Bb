@@ -343,6 +343,7 @@ if (command === 'ping') {
 							time: 10000,
 							errors: ['time']
 						});
+						           selection.delete();
 					} catch (err) {
 						console.error(err);
 						return msg.channel.send('No or invalid value entered, cancelling video selection.');
