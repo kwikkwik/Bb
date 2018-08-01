@@ -517,6 +517,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		url: `https://www.youtube.com/watch?v=${video.id}`,
 		uploadedby: video.channel.title,
 		url: `https://www.youtube.com/watch?v=${video.id}`,
+		channelurl: `https://www.youtube.com/channel/${video.channel.id}`,
 		durationh: video.duration.hours,
 		durationm: video.duration.minutes,
 		durations: video.duration.seconds,
@@ -556,9 +557,9 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
   .setAuthor(`Added to Queue`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, false)
+  .addField("Video Uploader", `[${song.uploadedby}](${song.channelurl})`, true)
   .addField("Requested By", `${song.request}`, true)
   .addField("Queue", `Number ${index++}`, true)
-  .addField("Video Uploader", `[${song.uploadedby}](${song.channelurl})`, true)
   .addField("Duration", `${song.durationh} Hours, ${song.durationm} Minutes, ${song.durations} Seconds`, true)
   .setTimestamp();
 		
@@ -594,11 +595,11 @@ function play(guild, song) {
   .setAuthor(`Start Playing`, `https://images-ext-1.discordapp.net/external/YwuJ9J-4k1AUUv7bj8OMqVQNz1XrJncu4j8q-o7Cw5M/http/icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('Title', `__[${song.title}](${song.url})__`, false)
-  .addField("Video Uploader", `[${song.uploadedby}](${song.channelurl})`, true)
   .addField("Requested By", `${song.request}`, true)
-  .addField("Duration", `${song.durationh} Hours, ${song.durationm} Minutes, ${song.durations} Seconds,`, true)
+  .addField("Video Uploader", `[${song.uploadedby}](${song.channelurl})`, true)
   .addField("Volume", `${serverQueue.volume}%`, true)
   .addField("Voice Room", `At: ${song.channels}`, true)
+  .addField("Duration", `${song.durationh} Hours, ${song.durationm} Minutes, ${song.durations} Seconds,`, true)
   .setFooter("If you can't hear the music, please reconect. If you still don't hear it, maybe the bot is restarting!")
   .setTimestamp();
 	
