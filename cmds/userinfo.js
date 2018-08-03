@@ -1,4 +1,8 @@
 const talkedRecently = new Set();
+const Discord = require("discord.js");
+const moment = require("moment");
+require("moment-duration-format");
+const ms = require('ms');
 
 exports.run = async (client, message, args, tools, map) => {
       if (message.channel.type === 'dm') return;
@@ -57,11 +61,11 @@ exports.run = async (client, message, args, tools, map) => {
     }
     const embed = new Discord.RichEmbed()
   .addField('**UserInfo:**', `**Name:** ${user.username}#${user.discriminator}\n**Join Discord:** ${joineddiscord}\n**The Last Message:** ${messag}\n**Playing:** ${game}\n**Status:** ${status}\n**Bot?** ${user.bot}`, true)
-  .setThumbnail(user.displayAvatarURL)
-  .addBlankField()
-  .addField(`Roles:`, '``' + message.mentions.members.first().roles.map(r => r.name).join(' ❱❱ ') + '``')
-  .addBlankField()
+  .setThumbnail(`${user.displayAvatarURL}\n`)
+  .addField(`Roles:`, '``' + message.mentions.members.first().roles.map(r => r.name).join(' ❱❱ ') + '``' + '\n')
   .addField('DiscordInfo:', `**Discriminator:** ${user.discriminator}\n**ID:** ${user.id}\n**Username:** ${user.username}`)
+  .addField("**Acc. Created At**", `${moment.utc(message.author.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} (${ms(Date.now()- message.author.createdAt, {long: true})})`)
+  .addField("**Joined At**", `${moment.utc(message.member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} (${ms(Date.now()- message.member.joinedAt, {long: true})})`)
   .setAuthor(`Info from ${user.username} in below`, user.displayAvatarURL)
   .setFooter(`© MasterBotTeam`, client.user.displayAvatarURL)
   .setColor(stat);
