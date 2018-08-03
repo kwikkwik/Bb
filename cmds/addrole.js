@@ -1,17 +1,27 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js")
 
 exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("You do not have permissions.")
-    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-    if (!rMember) return message.reply("Please provide a user name")
-    let role = args.join(" ").slice(22);
+               if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(`**🔒 | ${message.author} Sorry, But You Need \`MANAGE ROLES\` Permissions To Use This Command!**`);
+        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if (!member) return message.channel.send("❌ | Please **@mention** Your Target!");
+        let role = args.join(" ").slice(22);
+        if (!role) return message.channel.send("❌ | Please Specify The Role Name!");
+        let gRole = message.guild.roles.find(`name`, role);
+        if (!gRole) return message.channel.send("❌ | No Roles Found Because: *Case Sensitive*");
+        if (member.roles.has(gRole.id)) return message.channel.send("❌ | That Roles Is Already Given.");
+        await (member.addRole(gRole.id));
 
-    if (!role) return message.reply("Please provide a role name.");
-    let aRole = message.guild.roles.find(`name`, role);
-    if (!aRole) return message.reply(`I can't find the role.`);
+        message.delete().catch(O_o=>{});
+        try {
+        await message.channel.send(`🎉 | Congratulations To <@${member.id}>, Gived Role: ${gRole}!`);
+        } catch (e) {
+        console.log(e.message)
+        }
+};
 
-    if (rMember.roles.has(aRole.id)) return message.reply("The user already have this role!");
-    await (rMember.addRole(aRole.id))
-    return message.reply("Success!")
-
-}
+exports.help = {
+    name: 'addrole',
+    aliases: ['arole'],
+    description: 'Give Role For Someone!',
+    usage: ' '
+};
