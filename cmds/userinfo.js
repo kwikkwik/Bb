@@ -15,6 +15,9 @@ exports.run = async (client, message, args, tools, map) => {
     if (message.channel.type === 'dm') return;
     const Discord = require('discord.js');
     let user = message.mentions.users.first();
+    if (!user) {
+        return message.reply('You must mention someone!');
+    }
 
     const mentioneduser = message.mentions.users.first();
     const joineddiscord = (mentioneduser.createdAt.getDate() + 1) + '/' + (mentioneduser.createdAt.getMonth() + 1) + '/' + mentioneduser.createdAt.getFullYear() + ' | ' + mentioneduser.createdAt.getHours() + ':' + mentioneduser.createdAt.getMinutes() + ':' + mentioneduser.createdAt.getSeconds();
