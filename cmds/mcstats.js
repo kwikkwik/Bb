@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => {
         message.channel.send({ embed: embed })
     }
     var embed = new Discord.RichEmbed()
-    .setAuthor("🖥 | Minecraft Server Status", message.author.displayAvatarURL)
+    .setAuthor(`${message.author.tag} | Minecraft Server Status`, message.author.displayAvatarURL)
     .setDescription(`On \`${server}\``)
     .addField("🏷 | IP Adress ", `**__${url.body.ip}__**`)
     .addField("🔌 | Port ", `**__${url.body.port}__**`)
