@@ -302,16 +302,35 @@ if (command === 'ping') {
     
 }
 	if (command === 'play' || command === 'p') {
-		if (!args[1]) return msg.reply(`Usage: **${prefix}play** <Song | URL | Playlist URL>.`);
-		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
-		const permissions = voiceChannel.permissionsFor(msg.client.user);
-		if (!permissions.has('CONNECT')) {
-			return msg.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
-		}
-		if (!permissions.has('SPEAK')) {
-			return msg.channel.send('I cannot speak in this voice channel, make sure I have the proper permissions!');
-		}
+        var searchString = args.slice(1).join(" ");
+        if(!searchString) return msg.channel.send({embed: {
+          color: 0x32d732,
+          description: `❌ Correct Usage Is: **${PREFIX}play or ${PREFIX}p [Song Name]/[Video URL]/[Playlist URL]**`
+        }})
+        const voiceChannel = msg.member.voiceChannel;
+        if (!voiceChannel) return msg.channel.send({
+            embed: {
+                color: 0x32d732,
+                description: `You're Not In The **Voice Channel**, Go Join Some!`
+            }
+        })
+        const permissions = voiceChannel.permissionsFor(msg.client.user);
+        if (!permissions.has('CONNECT')) {
+              msg.channel.send({
+            embed: {
+                color: 0x32d732,
+                description: "OOPS..! I Lack The `Connect` Permissions On Those Channel!"
+            }
+        })
+    }
+        if (!permissions.has('SPEAK')) {
+            return msg.channel.send({
+            embed: {
+                color: 0x32d732,
+                description: "OOPS..! I Lack The `Speak` Permissions On Those Channel!"
+            }
+        })
+}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
 			const playlist = await youtube.getPlaylist(url);
@@ -387,7 +406,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
         })
         serverQueue.connection.dispatcher.end('Skip Command Has Been Used!');
         return msg.channel.send({embed: {
-          color: 0x06238B,
+          color: 0x32d732,
           description: `⏭ Current Playing Song Has Been **Skipped**.`,
         }});
     } else if (command === 'stop'|| command === 'st') {
