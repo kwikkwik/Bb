@@ -302,8 +302,7 @@ if (command === 'ping') {
     
 }
 	if (command === 'play' || command === 'p') {
-        var searchString = args.slice(1).join(" ");
-        if(!searchString) return msg.channel.send({embed: {
+        if (!args[1]) return msg.channel.send({embed: {
           color: 0x32d732,
           description: `❌ Correct Usage Is: **${PREFIX}play or ${PREFIX}p [Song Name]/[Video URL]/[Playlist URL]**`
         }})
