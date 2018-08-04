@@ -58,7 +58,7 @@ MojangAPI.nameHistory(`${shortuuid}`, function(err, res) {
          if (!lastName)
          {
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -75,7 +75,7 @@ MojangAPI.nameHistory(`${shortuuid}`, function(err, res) {
          	 var at = new Date(lastName.changedToAt);
            var name1 = lastName.name;
          	 var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -94,7 +94,7 @@ MojangAPI.nameHistory(`${shortuuid}`, function(err, res) {
             var name1 = lastName.name;
             var name2 = lastName2.name;
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -114,7 +114,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name2 = lastName2.name;
             var name3 = lastName3.name;
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -136,7 +136,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name3 = lastName3.name;
             var name4 = lastName4.name;
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -158,7 +158,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name4 = lastName4.name;
             var name5 = lastName5.name;
          	var embed = new Discord.RichEmbed()
-	  .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+	  .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -180,7 +180,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name5 = lastName5.name;
             var name6 = lastName6.name; 
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -204,7 +204,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name6 = lastName6.name; 
             var name7 = lastName7.name;
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
@@ -228,7 +228,7 @@ if (embed.length > 2000) return message.channel.send("❌ | Oops, I Cant Send Mo
             var name7 = lastName7.name;
             var name8 = lastName8.name; 
          	var embed = new Discord.RichEmbed()
-          .setAuthor("👤 | Minecraft User Status", message.author.displayAvatarURL)
+          .setAuthor(`${message.author.tag} | Minecraft User Status`, message.author.displayAvatarURL)
           .addField("🏷 | Username", username)
           .addField("💳 | Short UUID", `\`${shortuuid}\``)
           .addField("💳 | Long UUID", `\`${longuuid}\``)
