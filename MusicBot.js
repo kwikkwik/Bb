@@ -82,7 +82,7 @@ client.on('message', async msg => { // eslint-disable-line
        if (command === 'changelog') {
 	        let embed = new Discord.RichEmbed()
 		.setAuthor("Bolt Changelog | 04 Aug 2018",`https://cdn.discordapp.com/avatars/471150809196003328/a0ed47f2512655b5604a94e0cfb950ef.png?size=2048`)
-		.setDescription("**[+] Added | [-] Removed | [#] Changed/Fixed** \n\n**[+]** Commands: `animememe`, `announce`, `ask`, `beautiful`, `cmm`, `emojify`, `fortnite`, `gif`, `google`, `img`, `listinvite`, `math`, `mcstats`, `mcuser`, `meme`, `npm`, `osu`, `ship`, `shorten`, `slot`, `urban`\n**[#]** Commands: -\n**[-]** Commands: -"")
+		.setDescription("**[+] Added | [-] Removed | [#] Changed/Fixed** \n\n**[+]** Commands: `animememe`, `announce`, `ask`, `beautiful`, `cmm`, `emojify`, `fortnite`, `gif`, `google`, `img`, `listinvite`, `math`, `mcstats`, `mcuser`, `meme`, `npm`, `osu`, `ship`, `shorten`, `slot`, `urban`\n**[#]** Commands: -\n**[-]** Commands: -")
 		.setFooter("© MasterBotTeam")
 		.setColor('GREEN')
 		.setTimestamp()
