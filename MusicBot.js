@@ -96,7 +96,7 @@ client.on('message', async msg => { // eslint-disable-line
                 .addField("Core", "`bugreport`, `dev`, `help`, `ping`, `invite`, `stats`, `info`, `vote`")
 		.addField("Music", "`join`, `leave`, `|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
 		.addField("Soundboard", "`airhorn`,  `clap`,  `cena`,  `duck`,  `pip`, `sad`,  `troll`,  `trombone`")
-		.addField("Economy", "`balance`, `coins`, `daily`, `level`, `profile`,")
+		.addField("Economy", "`balance`, `coins`, `daily`, `level`, `profile`, `rep`, `+rep`, `-rep`")
 		.addField("Utility", "`avatar`, `cinvite`, `discrim`, `fortnite`, `google`, `invitelist`, `listinvite`, `listemoji`, `math`, `mcuser`, `mcstats`, `npm`, `poll`, `report`, `serverinfo`, `sgif`, `shorten`, `timer`, `translate`, `userinfo`, `urban`, `warn`, `weather`")
 		.addField("Fun", "`8ball`, `animememe`, `ask`, `ascii`, `beautiful`, `cmm`, `emojify`, `flip`, `joke`, `lucknumber`, `mcsay`, `meme`, `osu`, `rolldice`, `rps`, `say`, `sayd`, `sayembed`, `ship`, `slot`, `cleverbot`, `randommeme`")
 		.addField("Image", "`beautiful`, `bunny`, `cat`, `dog`, `gif`, `givecandy`, `img`, `imgur`, `pat`, `hug`, `kiss`, `cry`, `slap`, `twice`")
