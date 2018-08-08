@@ -21,7 +21,7 @@ var option = args.slice(0).join(" ")
                 .setTimestamp()
 
               message.react("📜")
-              message.channel.send({helpembed});
+              message.channel.send(helpembed);
             } else {
               if (option.match("welcome")) {
                               var embed = new Discord.RichEmbed()
