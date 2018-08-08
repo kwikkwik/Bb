@@ -89,7 +89,7 @@ client.on('message', async msg => { // eslint-disable-line
 		
 		return msg.channel.send(embed)
 		};
-       if (command === 'help') {
+       if (command === 'help200304') {
                 let helpembed = new Discord.RichEmbed()
 		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
                 .setTitle("Bolt Command List")
