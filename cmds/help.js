@@ -4,7 +4,7 @@ module.exports.run = (bot, message, args, ops, PREFIX) => {
 
 var option = args.slice(0).join(" ")
             if (!option) {
-                let helpembed = new Discord.RichEmbed()
+                var helpembed = new Discord.RichEmbed()
 		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
                 .setTitle("Bolt Command List")
                 .addField("Core", "`bugreport`, `dev`, `help`, `ping`, `invite`, `stats`, `info`, `vote`")
