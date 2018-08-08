@@ -6,6 +6,7 @@ var option = args.slice(0).join(" ")
             if (!option) {
                 var helpembed = new Discord.RichEmbed()
 		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
+		.setDescription("**Type b!help <command>**")
                 .setTitle("Bolt Command List")
                 .addField("Core", "`bugreport`, `dev`, `help`, `ping`, `invite`, `stats`, `info`, `vote`")
 		.addField("Music", "`join`, `leave`, `|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
