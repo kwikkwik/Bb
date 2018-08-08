@@ -16,7 +16,7 @@ var option = args.slice(0).join(" ")
 		.addField("Image", "`beautiful`, `bunny`, `cat`, `dog`, `gif`, `givecandy`, `img`, `imgur`, `pat`, `hug`, `kiss`, `cry`, `slap`, `twice`")
 		.addField("Administration", "`addrole`, `announce`, `autoroles`, `autonick`, `ban`, `kick`, `mute`, `prune|purge`, `removerole`, `sayd`, `setprefix`, `tempmute`, `welcome`")
 		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt) | [Vote](https://discordbots.org/bot/471150809196003328/vote)")
-		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
+		.setFooter(`Requested by: ${message.author.tag} | © MasterBotTeam`)
 		.setColor('GREEN')
                 .setTimestamp()
 
