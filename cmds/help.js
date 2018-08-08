@@ -3,20 +3,25 @@ const Discord = require("discord.js")
 module.exports.run = (bot, message, args, ops, PREFIX) => {
 
 var option = args.slice(0).join(" ")
-            if (option.match("test")) {
-              var embed = new Discord.RichEmbed()
-              .setColor("#32d732")
-              .setDescription(`
-**COMMAND:**
-- \`b!welcome set #channel\`
-- \`b!welcome on\`
-- \`b!welcome off\`
+            if (!option) {
+                let helpembed = new Discord.RichEmbed()
+		.setThumbnail('https://media.giphy.com/media/lYibYdyfaJzxW5tW4s/giphy.gif')
+                .setTitle("Bolt Command List")
+                .addField("Core", "`bugreport`, `dev`, `help`, `ping`, `invite`, `stats`, `info`, `vote`")
+		.addField("Music", "`join`, `leave`, `|p`, `skip|s`, `stop|st`, `queue|q`, `pause|ps`, `resume|re`, `volume|v`, `nowplaying|np`") 
+		.addField("Soundboard", "`airhorn`,  `clap`,  `cena`,  `duck`,  `pip`, `sad`,  `troll`,  `trombone`")
+		.addField("Economy", "`balance`, `coins`, `daily`, `level`, `profile`, `rep`, `+rep`, `-rep`")
+		.addField("Utility", "`avatar`, `cinvite`, `discrim`, `fortnite`, `google`, `invitelist`, `listinvite`, `listemoji`, `math`, `mcuser`, `mcstats`, `npm`, `poll`, `report`, `serverinfo`, `sgif`, `shorten`, `timer`, `translate`, `userinfo`, `urban`, `warn`, `weather`")
+		.addField("Fun", "`8ball`, `animememe`, `ask`, `ascii`, `beautiful`, `cmm`, `emojify`, `flip`, `joke`, `lucknumber`, `mcsay`, `meme`, `osu`, `rolldice`, `rps`, `say`, `sayd`, `sayembed`, `ship`, `slot`, `cleverbot`, `randommeme`")
+		.addField("Image", "`beautiful`, `bunny`, `cat`, `dog`, `gif`, `givecandy`, `img`, `imgur`, `pat`, `hug`, `kiss`, `cry`, `slap`, `twice`")
+		.addField("Administration", "`addrole`, `announce`, `autoroles`, `autonick`, `ban`, `kick`, `mute`, `prune|purge`, `removerole`, `sayd`, `setprefix`, `tempmute`, `welcome`")
+		.addField("**Usefull Links**", "[Invite Me](https://bot.discord.io/bolt) | [Vote](https://discordbots.org/bot/471150809196003328/vote)")
+		.setFooter(`Requested by: ${msg.author.tag} | © MasterBotTeam`)
+		.setColor('GREEN')
+                .setTimestamp()
 
-`)
-              .setFooter("welcome", bot.user.displayAvatarURL)
-              .setTimestamp()
               message.react("📜")
-              message.channel.send({embed});
+              message.channel.send({helpembed});
             } else {
               if (option.match("welcome")) {
                               var embed = new Discord.RichEmbed()
