@@ -63,7 +63,7 @@ exports.run = async (client, message, args) =>
         }, 5 * 60 * 1000);
 
         message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-            .setColor(0x00AE86)
+            .setColor(0x32d732)
             .setDescription(`<@!${mentionedUser}> if you accept type '**yes**', otherwise type '**no**'. \n\nYou have **30** second(s).`));
 
         // Await for tagged user's answer.
@@ -86,7 +86,7 @@ exports.run = async (client, message, args) =>
                 var personToFlip = randomPerson === 1 ? firstPlayer : secondPlayer;
 
                 await message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-                    .setColor(0x00AE86)
+                    .setColor(0x32d732)
                     .setDescription(`We shall have a flip coin to see who starts first!\n${personToFlip} what's your choice '**heads**' or '**tails**'? \n\nYou have **30** second(s).`));
 
                 const filter = m => (m.content.toLowerCase() === 'heads' || m.content.toLowerCase() === 'tails') && m.author.id === personToFlip.id;
@@ -130,7 +130,7 @@ exports.run = async (client, message, args) =>
 
                         // Let the users know about moves they can use along with their health stats.
                         await message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-                            .setColor(0x00AE86)
+                            .setColor(0x32d732)
                             .setDescription(`${currentPlayer} it's your turn, make your move.\n➾ **Attack** - Attacks the enemy. Damage 20 - 100.\n➾ **Guard** - Blocks the next incoming attack.\n➾ **Special** - Launches a powerful attack but has **15** % chance of landing. Damage 120 - 200.\n➾ **Run** - Runs as fast as you possibly can to escape death. \n\n${firstPlayer} HP : ${firstPlayer.health}\n${secondPlayer} HP : ${secondPlayer.health}\n\nYou have **10** second(s).`));
 
                         // Await for current player's choice
@@ -266,7 +266,7 @@ exports.run = async (client, message, args) =>
                                 winner = targetPlayer;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0xD11313)
+                                    .setColor(0x32d732)
                                     .setDescription(`${currentPlayer} missed 2 turns and yield the fight.`)
                                     .setTimestamp());
                             }
@@ -277,7 +277,7 @@ exports.run = async (client, message, args) =>
                                 turn = !turn;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0xD11313)
+                                    .setColor(0x32d732)
                                     .setDescription(`${currentPlayer}, you missed your turn.`)
                                     .setTimestamp());
                             }
