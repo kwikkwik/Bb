@@ -2,6 +2,7 @@ const urban = require('relevant-urban');
 const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args, tools) => {
+	if (!message.channel.nsfw) return message.reply(" You must be in a **N.S.F.W** channel to use this command.");
 
 	
 	if(!args[0]) return message.channel.send(`***Please specify some text***`);
