@@ -266,7 +266,7 @@ exports.run = async (client, message, args) =>
                                 winner = targetPlayer;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0x32d732)
+                                    .setColor(0xff0f0f)
                                     .setDescription(`${currentPlayer} missed 2 turns and yield the fight.`)
                                     .setTimestamp());
                             }
@@ -277,7 +277,7 @@ exports.run = async (client, message, args) =>
                                 turn = !turn;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0x32d732)
+                                    .setColor(0xff0f0f)
                                     .setDescription(`${currentPlayer}, you missed your turn.`)
                                     .setTimestamp());
                             }
@@ -297,7 +297,7 @@ exports.run = async (client, message, args) =>
                 // Winner declaration message.
                 message.channel.send(new Discord.RichEmbed()
                     .setTitle(':crown: | Battle')
-                    .setColor(0x32d732)
+                    .setColor(0x0fff17)
                     .setDescription(`The battle is over! Congratulations to the winner ${winner} !\n\n${firstPlayer} HP : ${firstPlayer.health}\n${secondPlayer} HP : ${secondPlayer.health}`)
                     .setTimestamp());
 
