@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const usersOnCooldown = new Set();
 
-exports.run = async (client, message, args) =>
+exports.run = async (client, bot, message, args) =>
 {
     if (args.length != 1)
     {
@@ -23,13 +23,14 @@ exports.run = async (client, message, args) =>
     }
 
     // Since this command results in a lot of spam it would be best to use on separate channel.
-    if ((message.channel.name != process.env.BATTLE_CHAT_1) && (message.channel.name != process.env.BATTLE_CHAT_2) && (message.channel.name != process.env.BATTLE_CHAT_3) && (message.channel.name != process.env.BATTLE_CHAT_4))
+    if ((message.channel.name != process.env.BATTLE_CHAT_1) && (message.channel.name != process.env.BATTLE_CHAT_2))
     {
-        return message.reply(`You cannot battle outside of #${process.env.BATTLE_CHAT_1}, #${process.env.BATTLE_CHAT_2}, #${process.env.BATTLE_CHAT_3}, #${process.env.BATTLE_CHAT_4} channel.`);
+        return message.reply(`You cannot battle outside of #${process.env.BATTLE_CHAT_1}, #${process.env.BATTLE_CHAT_2} channel.`);
     }
 
     // If the tagged user's status is offline/idle
-    if (message.guild.members.get(mentionedUser).presence.status === 'offline'
+    if (message.guild.members.get(mentionedUser).presence.status === 'offline' ||
+        message.guild.members.get(mentionedUser).presence.status === 'idle')
         return message.reply("You cannot battle against an afk/offline member.");
 
     // Initiate game variables
@@ -62,7 +63,7 @@ exports.run = async (client, message, args) =>
         }, 5 * 60 * 1000);
 
         message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-            .setColor(0x32d732)
+            .setColor(0x00AE86)
             .setDescription(`<@!${mentionedUser}> if you accept type '**yes**', otherwise type '**no**'. \n\nYou have **30** second(s).`));
 
         // Await for tagged user's answer.
@@ -85,7 +86,7 @@ exports.run = async (client, message, args) =>
                 var personToFlip = randomPerson === 1 ? firstPlayer : secondPlayer;
 
                 await message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-                    .setColor(0x32d732)
+                    .setColor(0x00AE86)
                     .setDescription(`We shall have a flip coin to see who starts first!\n${personToFlip} what's your choice '**heads**' or '**tails**'? \n\nYou have **30** second(s).`));
 
                 const filter = m => (m.content.toLowerCase() === 'heads' || m.content.toLowerCase() === 'tails') && m.author.id === personToFlip.id;
@@ -129,7 +130,7 @@ exports.run = async (client, message, args) =>
 
                         // Let the users know about moves they can use along with their health stats.
                         await message.channel.send(new Discord.RichEmbed().setTitle(':crossed_swords: | Battle')
-                            .setColor(0x32d732)
+                            .setColor(0x00AE86)
                             .setDescription(`${currentPlayer} it's your turn, make your move.\n➾ **Attack** - Attacks the enemy. Damage 20 - 100.\n➾ **Guard** - Blocks the next incoming attack.\n➾ **Special** - Launches a powerful attack but has **15** % chance of landing. Damage 120 - 200.\n➾ **Run** - Runs as fast as you possibly can to escape death. \n\n${firstPlayer} HP : ${firstPlayer.health}\n${secondPlayer} HP : ${secondPlayer.health}\n\nYou have **10** second(s).`));
 
                         // Await for current player's choice
@@ -265,7 +266,7 @@ exports.run = async (client, message, args) =>
                                 winner = targetPlayer;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0x32d732)
+                                    .setColor(0xD11313)
                                     .setDescription(`${currentPlayer} missed 2 turns and yield the fight.`)
                                     .setTimestamp());
                             }
@@ -276,7 +277,7 @@ exports.run = async (client, message, args) =>
                                 turn = !turn;
                                 message.channel.send(new Discord.RichEmbed()
                                     .setTitle(':crossed_swords: | Battle')
-                                    .setColor(0x32d732)
+                                    .setColor(0xD11313)
                                     .setDescription(`${currentPlayer}, you missed your turn.`)
                                     .setTimestamp());
                             }
@@ -296,7 +297,7 @@ exports.run = async (client, message, args) =>
                 // Winner declaration message.
                 message.channel.send(new Discord.RichEmbed()
                     .setTitle(':crown: | Battle')
-                    .setColor(0x32d732)
+                    .setColor(0x00AE86)
                     .setDescription(`The battle is over! Congratulations to the winner ${winner} !\n\n${firstPlayer} HP : ${firstPlayer.health}\n${secondPlayer} HP : ${secondPlayer.health}`)
                     .setTimestamp());
 
@@ -310,7 +311,7 @@ exports.run = async (client, message, args) =>
 
                 message.channel.send(new Discord.RichEmbed()
                     .setTitle(':crossed_swords: | Battle')
-                    .setColor(0x32d732)
+                    .setColor(0x00AE86)
                     .setDescription(`Kek, not willing to fight eh. <@!${message.author.id}>`)
                     .setTimestamp());
             }
@@ -322,7 +323,7 @@ exports.run = async (client, message, args) =>
 
             message.channel.send(new Discord.RichEmbed()
                 .setTitle(':crossed_swords: | Battle')
-                .setColor(0x32d732)
+                .setColor(0xD11313)
                 .setDescription(`Time out. ${secondPlayer} did not answer to the request.`)
                 .setTimestamp())
         });
@@ -332,7 +333,7 @@ exports.run = async (client, message, args) =>
         // If the users are in the cooldown list.
         message.channel.send(new Discord.RichEmbed()
             .setTitle(':crossed_swords: | Battle')
-            .setColor(0x32d732)
+            .setColor(0xD11313)
             .setDescription(`Your request has already been made. Try again later.`));
     }
 };
