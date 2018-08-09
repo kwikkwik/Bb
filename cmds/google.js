@@ -3,7 +3,8 @@ const request = require('request-promise-native');
 const { RichEmbed } = require('discord.js');
 
 exports.run = async (client, msg, args) => {
-	if(args.length < 1) return args.missing(msg, 'No query provided', this.help);
+	if (!message.channel.nsfw) return message.reply(" You must be in a **N.S.F.W** channel to use this command.");
+	if(args.length < 1) return msg.reply("Please specify some text");
 	const searchMsg = await msg.channel.send('🔎 Searching....');
 	
 	let google = {
