@@ -23,7 +23,7 @@ exports.run = async (client, message, args) =>
     }
 
     // Since this command results in a lot of spam it would be best to use on separate channel.
-    if ((message.channel.name != process.env.BATTLE_CHAT_1) && (message.channel.name != process.env.BATTLE_CHAT_2))
+    if ((message.channel.name != process.env.BATTLE_CHAT_1) && (message.channel.name != process.env.BATTLE_CHAT_2) && (message.channel.name != process.env.BATTLE_CHAT_4))
     {
         return message.reply(`You cannot battle outside of #${process.env.BATTLE_CHAT_1}, #${process.env.BATTLE_CHAT_2} channel.`);
     }
