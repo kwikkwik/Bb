@@ -645,6 +645,7 @@ client.on('message', message => {
 
     try {
         let commandFile = require(`./cmds/${cmd}.js`);
+	let channel = bot.channels.get("478036414592974878");
         commandFile.run(client, message, args);
     } catch(e) {
       let channel = bot.channels.get("478036351917359109");
