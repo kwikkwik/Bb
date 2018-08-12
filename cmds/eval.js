@@ -61,7 +61,7 @@ exports.run = (client, message) => {
         .setAuthor(`Eval by ${message.author.tag}`, message.author.avatarURL)
         .setDescription(`**:inbox_tray: Input:**\n\n\`\`\`js\n${cont}\`\`\``, true)
         .addField(`\u200b`, `**:outbox_tray: Output:**\`\`\`js\n${clean(err)}\`\`\``, true)
-        .setColor("BLUE")
+        .setColor("YELLOW")
         .setFooter(`Node.js - Time taken: ${Date.now() - message.createdTimestamp} `, `https://images-ext-2.discordapp.net/eyJ1cmwiOiJodHRwczovL2Euc2FmZS5tb2UvVUJFVWwucG5nIn0.LbWCXwiUul3udoS7s20IJYW8xus`);
             msg.edit({
                 embed: errorcode
