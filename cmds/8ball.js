@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
     If author didn't ask a question return
     */
     if (!question) {
-        return message.reply('What questions to answer? **Usage:** `*8ball she is love me?`');
+        return message.reply('What questions to answer? **Usage:** `b!8ball she is love me?`');
     }
     const embed = new Discord.RichEmbed()
     .setColor('#06238B')
