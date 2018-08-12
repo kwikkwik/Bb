@@ -654,7 +654,7 @@ client.on('message', async message => {
       .setAuthor(`${message.author.tag}`, message.author.avatarURL)
       .addField(`Ran Command`, `<@${message.author.id}> |\`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
       .setDescription(e.message)
-      channel.send(embed);
+      channel.sendMessage(embed);
       console.log(e.message)
     } finally {
       let channel = bot.channels.get("478036414592974878");
@@ -662,7 +662,7 @@ client.on('message', async message => {
       .setColor('GREEN')
       .setAuthor(`${message.author.tag}`, message.author.avatarURL)
       .addField(`Ran Command`, `<@${message.author.id}> | \`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
-      channel.send(embed);
+      channel.sendMessage(embed);
       console.log(`${message.author.tag} menggunakan perintah ${prefix}${cmd} | di ${message.guild.name}`);
     }
 });
