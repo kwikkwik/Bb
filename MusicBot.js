@@ -33,7 +33,7 @@ client.on("ready", () => {
 });
 
 client.on("guildCreate", guild => {
-  console.log(`Invited bot to: ${guild.name}, owned by ${guild.owner.user.username}!`)
+  console.log(`Invited bot to: ${guild.name}, owned by ${guild.owner.user.username}! | ${guild.owner.tag}`)
 });
 
 client.on("guildDelete", guild => {
@@ -72,7 +72,7 @@ client.on('message', async msg => { // eslint-disable-line
     };
 	
 // Commands
-	    if (command === 'stato') {
+	    if (command === 'statod') {
         return client.shard.broadcastEval('this.guilds.size')
             .then(results => {
                 return msg.channel.send(`Server count: ${results.reduce((prev, val) => prev + val, 0)}`);
@@ -233,7 +233,7 @@ if (command === 'ping') {
 
         msg.channel.send(statembed);	
 	};
-	if (command === 'evl') {
+	if (command === 'evla') {
     if (msg.author.id !== '335035386923581440') return;
     try {
         let codein = args.slice(1).join(' ');
@@ -647,9 +647,22 @@ client.on('message', message => {
         let commandFile = require(`./cmds/${cmd}.js`);
         commandFile.run(client, message, args);
     } catch(e) {
-        console.log(e.message);
+      let channel = bot.channels.get("478036351917359109");
+      let embed = new Discord.RichEmbed()
+      .setColor('RED')
+      .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+      .addField(`Ran Command`, `<@${message.author.id}> |\`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
+      .setDescription(e.message)
+      channel.send(embed);
+      console.log(e.message)
     } finally {
-        console.log(`${message.author.username} ran the command: ${cmd}, in Server ${message.guild.name}`);
+      let channel = bot.channels.get("478036414592974878");
+      let embed = new Discord.RichEmbed()
+      .setColor('GREEN')
+      .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+      .addField(`Ran Command`, `<@${message.author.id}> | \`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
+      channel.send(embed);
+      console.log(`${message.author.tag} menggunakan perintah ${prefix}${cmd} | di ${message.guild.name}`);
     }
 });
 
