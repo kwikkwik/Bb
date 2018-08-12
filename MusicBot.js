@@ -645,24 +645,24 @@ client.on('message', async message => {
 
     try {
         let commandFile = require(`./cmds/${cmd}.js`);
-	let channel = bot.channels.get("478036414592974878");
+	let channel = client.channels.get("478036414592974878");
         commandFile.run(client, message, args);
     } catch(e) {
-      let channel = bot.channels.get("478036351917359109");
+      let channel = client.channels.get("478036351917359109");
       let embed = new Discord.RichEmbed()
       .setColor('RED')
       .setAuthor(`${message.author.tag}`, message.author.avatarURL)
       .addField(`Ran Command`, `<@${message.author.id}> |\`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
       .setDescription(e.message)
-      channel.sendMessage(embed);
+      channel.send(embed);
       console.log(e.message)
     } finally {
-      let channel = bot.channels.get("478036414592974878");
+      let channel = client.channels.get("478036414592974878");
       let embed = new Discord.RichEmbed()
       .setColor('GREEN')
       .setAuthor(`${message.author.tag}`, message.author.avatarURL)
       .addField(`Ran Command`, `<@${message.author.id}> | \`${prefix}${cmd}\` In Guild \`${message.guild.name}\``)
-      channel.sendMessage(embed);
+      channel.send(embed);
       console.log(`${message.author.tag} menggunakan perintah ${prefix}${cmd} | di ${message.guild.name}`);
     }
 });
