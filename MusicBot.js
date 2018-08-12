@@ -625,7 +625,7 @@ function play(guild, song) {
 	return serverQueue.textChannel.send(splayembed);
 }
 // Listener Events
-client.on('message', message => {
+client.on('message', async message => {
   
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
     if (!prefixes[message.guild.id]) {
