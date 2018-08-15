@@ -1,39 +1,46 @@
-const Discord = require('discord.js');
-const talkedRecently = new Set();
+const Discord = require("discord.js");
+const fs = require("fs");
+const ms = require("ms");
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
-exports.run = async (client, message, args, tools, map) => {
-      if (message.channel.type === 'dm') return;
-    if (talkedRecently.has(message.author.id))
-    return;
-    talkedRecently.add(message.author.id);
-    setTimeout(() => {
-    talkedRecently.delete(message.author.id);
-  }, 7000);
-  let reason = args.slice(1).join(' ');
-  let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'warn', 'mod-log', 'warns');
-  if (!modlog) return message.reply('I cannot find a mod-log channel');
-  if (reason.length < 1) return message.reply('You must supply a reason for the warning.');
-  if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn them.').catch(console.error);
-  const embed = new Discord.RichEmbed()
-  .setColor('GREEN')
-  .setTimestamp()
-  .addField('Action:', 'Warning')
-  .addField('User:', `${user.username}#${user.discriminator}`)
-  .addField('Modrator:', `${message.author.username}#${message.author.discriminator}`)
-  .addField('Reason:', `${reason}`);
-  return client.channels.get(modlog.id).sendEmbed(embed);
-};
+module.exports.run = async (bot, message, args) => {
+  message.delete();
+ let guild = message.guild.name; 
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
-};
+  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("**You don't have `KICK_MEMBERS` permissions.");
+  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  if(wUser === message.author) return message.channel.send("Are you retarted? Why do you wanna warn yourself?")
+  if(!wUser) return message.reply("Couldn't find the user.");
+  let reason = args.join(" ").slice(22);
+if(!reason) return message.channel.send("Please provide a reason!")
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
 
-exports.help = {
-  name: 'warn',
-  description: 'Issues a warning to the mentioned user.',
-  usage: 'warn [mention]'
-};
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
+
+  let warnEmbed = new Discord.RichEmbed()
+  .setTitle("Warn")
+  .setColor("#fc6400")
+  .addField("User", `${wUser.user.tag}`)
+  .addField("Moderator", `${message.author.tag}`)
+  .addField("Number of Warnings", warns[wUser.id].warns)
+  .addField("Reason", `${reason ? reason : "None."}`);
+
+  let warnchannel = message.guild.channels.find(`name`, "mod-log");
+  if(!warnchannel) return message.channel.send("<❌ **| Couldn't find `mod-log` channel**");
+  warnchannel.send(warnEmbed);
+  message.channel.send(`🚫 | **${wUser.user.username}** you have been warned for **${reason ? reason: "None."}**`)
+  wUser.user.send(`you have been warned in **${message.guild.name}** for **${reason ? reason: "None."}**`)
+  
+
+  
+}
+
+module.exports.help = {
+  name: "?warn"
+}
