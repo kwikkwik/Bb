@@ -18,7 +18,15 @@ exports.run = async (client, message, args, color) => {
     .setColor("RANDOM")
     .setTitle("Prefix Changed!")
     .setDescription(`Set to **${args[0]}** on ${message.guild.name}`)
-    .setTimestamp();
+    .addField('CORE', `Succes | Prefix: \`${args[0]}\``)
+    .addField('MUSIC', `Failed | Prefix: \`b~\``)
+	    .addField('SOUNDBOARD', `Failed | Prefix: \`b!\``)
+	    .addField('ECONOMY', `Succes | Prefix: \`${args[0]}\``)
+	    .addField('UTILITY', `Succes | Prefix: \`${args[0]}\``)
+	    .addField('FUN', `Succes | Prefix: \`${args[0]}\``)
+	    .addField('IMAGE', `Succes | Prefix: \`${args[0]}\``)
+	    .addField('ADMINISTRATION', `Succes | Prefix: \`${args[0]}\``)
+	    .setTimestamp();
 
     message.channel.send(embed);
 	
